@@ -1,0 +1,5279 @@
+/*
+Theme Name: Systematics
+Description: Systematics website theme
+Version: 20.86
+Author: Systematics
+Author URI: 
+Template: enfold
+*/
+
+
+/*================ DON'T DELETE THIS COMMENT ===========================
+================ Columns reverse in the backend fix =======================*/
+
+/* This fix didn't apply from here. Done directly in the theme's file:
+themes > enfold > config-templatebuilder > avia-template-builder > assets > css > avia-builder-rtl.css
+It should be re-updated with every theme update */
+
+/*		columns		*/
+/*
+.rtl div.avia_layout_column,
+.rtl div.avia_layout_section,
+.rtl div.avia-highlight{
+	float: left; 
+}
+
+.rtl div.avia_layout_column.avia_layout_tab{
+	float: right !important; 
+	width: 100%;
+}
+
+.rtl div.avia_layout_column.avia-first-col{
+	clear: left !important; 
+}
+
+*/
+
+/* Webfont: NarkisBlockMFW-Thin */@font-face {
+    font-family: 'NarkisBlockMFW-Thin';
+    src: url('fonts/NarkisBlock-Thin_MFW.eot'); /* IE9 Compat Modes */
+    src: url('fonts/NarkisBlock-Thin_MFW.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/NarkisBlock-Thin_MFW.woff') format('woff'), /* Modern Browsers */
+         url('fonts/NarkisBlock-Thin_MFW.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/NarkisBlock-Thin_MFW.svg#NarkisBlockMFW-Thin') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* ======================================================================================================================================================
+Design fixes after Enfold theme update from 4.0.7 to 4.8.6 and WordPress update from 4.9.18 to 5.8
+====================================================================================================================================================== */
+
+/*================ Blog ==================*/
+
+/*-------- Blog social buttons --------*/
+
+div.wp-video {
+	max-width: 100% !important;
+}
+
+/*-------- Blog social icons --------*/
+
+#top .av-share-box ul {
+    width: 100%;
+}
+
+/*-------- Hide burger-menu on the main blog pages --------*/
+
+@media only screen and (max-width: 767px){
+	.responsive .archive.tag#top.av-main-nav .menu-item-avia-special, .responsive .archive.category#top .av-main-nav .menu-item-avia-special, .responsive .blog#top .av-main-nav .menu-item-avia-special {
+		display: none;
+	}
+}
+
+/*================ LayerSlider ==================*/
+
+.rtl .ls-layers * {
+    direction: ltr;
+}
+
+/*================ Contact form 7 ==================*/
+
+.wpcf7 textarea, .wpcf7 input[type="text"], .wpcf7 input[type="input"], .wpcf7 input[type="email"],
+.wpcf7 input[type="number"], .wpcf7 input[type="url"], .wpcf7 input[type="tel"], .wpcf7 input[type='submit'] {
+	font: inherit !important;
+}
+
+/*-------- Font fixes --------*/
+
+#top .main_color .input-text, #top .main_color input[type='text'], #top .main_color input[type='input'],
+#top .main_color input[type='password'], #top .main_color input[type='email'], #top .main_color input[type='number'],
+#top .main_color input[type='url'], #top .main_color input[type='tel'], #top .main_color input[type='search'],
+#top .main_color textarea, #top .main_color select {
+    font-family: inherit;
+}
+
+cite.comment_author_name {
+    font-family: inherit;
+}
+
+/*====================================================================================================================
+End of Design fixes after Enfold theme update from 4.0.7 to 4.8.6 and WordPress update from 4.9.18 to 5.8
+====================================================================================================================== */
+
+/* Bold text color */
+#top .header_color strong, #top .main_color strong, #top .alternate_color strong, #top .footer_color strong, #top .socket_color strong {
+  color: inherit;
+  }
+
+/*============================================================
+             New main pages design
+==============================================================*/
+
+
+/* Container for the button row EN */
+.main_button_row {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  justify-content: flex-start; /* align buttons to the left */
+  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  direction: ltr; /* force left-to-right direction */
+  margin: 20px 0;
+}
+
+/* Style for individual buttons EN */
+.main_button_row .avia-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* spacing between icon and text */
+  padding: 10px 24px;
+  direction: ltr;
+  text-align: left;
+}
+
+
+/* Container for the button row HE */
+.main_button_row_he {
+  display: flex;
+  gap: 10px; 
+  justify-content: flex-start; 
+  flex-wrap: wrap;
+  direction: rtl; 
+  margin: 20px 0;
+}
+
+/* Style for individual buttons HE */
+.main_button_row_he .avia-button {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row-reverse !important;
+  gap: 10px;
+  padding: 10px 24px;
+  direction: rtl;
+  text-align: right;
+}
+
+/* Icon to the right HE */
+.main_button_row_he .avia-button .avia_button_icon_right {
+	left: -3px !important;
+	right: auto !important;
+}
+
+/* Fix last button margin HE */
+.main_button_row_he .avia-button:last-child {
+  margin-right: 10px !important;
+}
+
+/* Fix first button margin HE */
+.main_button_row_he {
+  margin-right: -10px !important;
+}
+
+
+.main_button_row_he .avia-button .avia_button_icon_right {
+	left: -3px !important;
+	right: auto !important;
+}
+
+
+/*--- Tchumi - main page image text ---*/
+.tchumi_main_text {
+  color: #ffffff !important;
+  direction: ltr;
+  text-align: left;
+}
+
+.tchumi_main_text h1,
+.tchumi_main_text h2,
+.tchumi_main_text h3,
+.tchumi_main_text h4,
+.tchumi_main_text h5,
+.tchumi_main_text h6 {
+  color: #ffffff !important;
+}
+
+.tchumi_main_text_he {
+  color: #ffffff !important;
+  direction: rtl;
+  text-align: right;
+}
+
+.tchumi_main_text_he h1,
+.tchumi_main_text_he h2,
+.tchumi_main_text_he h3,
+.tchumi_main_text_he h4,
+.tchumi_main_text_he h5,
+.tchumi_main_text_he h6 {
+  color: #ffffff !important;
+}
+
+@media (min-width: 768px) {
+	
+	.tchumi_column1 {
+		border-top:	14px solid #ffffff !important;
+		border-right: 7px solid #ffffff !important;	
+		border-bottom:	14px solid #ffffff !important;
+		border-left: 14px solid #ffffff !important;
+	}
+
+	.tchumi_column23 {
+		border-top:	14px solid #ffffff !important;
+		border-right: 7px solid #ffffff !important;	
+		border-bottom:	14px solid #ffffff !important;
+		border-left: 7px solid #ffffff !important;
+	}
+
+	.tchumi_column4 {
+		border-top:	14px solid #ffffff !important;
+		border-right: 14px solid #ffffff !important;	
+		border-bottom:	14px solid #ffffff !important;
+		border-left: 7px solid #ffffff !important;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+	.tchumi_column1,
+	.tchumi_column23,
+	.tchumi_column4 {
+		border:	14px solid #ffffff !important;		
+	}	
+}
+
+
+/* Black layer with opacity overlay */
+.darken_bg {
+  position: relative;
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.darken_bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.darken_bg > *,
+.darken_bg .flex_column_content {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+
+
+/*============================================================
+             New main menu and submenu design
+==============================================================*/
+
+/*=============== Header widget HE EN and search box ============*/
+
+#header .widget {
+right: 120px;
+padding-top: 0;
+background: none !important;
+position: absolute;
+top: 0;
+width:100px;
+max-height:66px;
+height:100%;
+}
+
+	@media only screen and (max-width: 767px) {
+	
+	.responsive #header .widget {
+	display:none;
+	}
+	
+	}
+
+#header .widget .textwidget p{
+	margin: 0px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+
+/*-------- Show or hide HE and EN on english pages --------*/
+
+#header .widget .textwidget .lang-he {
+		display:none;	
+}
+
+
+.page-id-5289 #header .widget .textwidget .lang-he,
+.page-id-5298 #header .widget .textwidget .lang-he,
+.page-id-5300 #header .widget .textwidget .lang-he,
+.page-id-5302 #header .widget .textwidget .lang-he,
+.page-id-5304 #header .widget .textwidget .lang-he,
+.page-id-5306 #header .widget .textwidget .lang-he,
+.page-id-5308 #header .widget .textwidget .lang-he,
+.page-id-13669 #header .widget .textwidget .lang-he,
+.page-id-5310 #header .widget .textwidget .lang-he,
+.page-id-5336 #header .widget .textwidget .lang-he,
+.page-id-5339 #header .widget .textwidget .lang-he,
+.page-id-5341 #header .widget .textwidget .lang-he,
+.page-id-5343 #header .widget .textwidget .lang-he {
+	display:inline !important;
+}
+
+
+.page-id-5289 #header .widget .textwidget .lang-en,
+.page-id-5298 #header .widget .textwidget .lang-en,
+.page-id-5300 #header .widget .textwidget .lang-en,
+.page-id-5302 #header .widget .textwidget .lang-en,
+.page-id-5304 #header .widget .textwidget .lang-en,
+.page-id-5306 #header .widget .textwidget .lang-en,
+.page-id-5308 #header .widget .textwidget .lang-en,
+.page-id-13669 #header .widget .textwidget .lang-en,
+.page-id-5310 #header .widget .textwidget .lang-en,
+.page-id-5336 #header .widget .textwidget .lang-en,
+.page-id-5339 #header .widget .textwidget .lang-en,
+.page-id-5341 #header .widget .textwidget .lang-en,
+.page-id-5343 #header .widget .textwidget .lang-en {
+	display:none !important;
+}
+
+/*-------- Search icon and bar ----------*/
+
+/* Search tooltip */
+#header .widget .avia-search-tooltip p,
+#header .widget .avia-search-tooltip input,
+#header .widget .avia-search-tooltip form {
+    font-size: 17px !important;
+}
+
+
+/* Search icon */
+#menu-item-search > a svg {
+  width: 20px;
+  height: 20px;
+  fill: #434343;
+  position: relative;
+  top: 4px;
+}
+
+
+/* MAIN clickable search icon */
+#menu-item-search > a > svg {
+    z-index: -1 !important;
+    position: relative !important;
+    top: 3px;
+}
+
+/* Padding around the search bar */
+#menu-item-search .avia-search-tooltip form {
+    padding: 15px !important;
+    background-color: #fff;
+}
+
+#menu-item-search > a {
+    display: inline-block;
+    background-color: transparent; 
+    position: relative;
+}
+
+
+#menu-item-search .avia-search-tooltip .av_searchform_search {
+    position: absolute;
+    top: 50%;
+    left: 0;
+	right:auto;
+	margin:0 !important;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 5000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu-item-search .avia-search-tooltip svg {
+    position: relative; 
+    z-index: 100;
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    display: block;
+	top: 50%;
+    transform: translateY(-50%);
+    left: -10px;
+}
+
+/*search bar padding */
+#top #s {
+	padding: 11px 5px 11px 47px !important;
+}
+
+/* White on transparen header */
+.page-id-3525#top #header.av_header_transparency .widget,
+.page-id-3525#top #header.av_header_transparency .widget a,
+.page-id-3525#top #header.av_header_transparency .widget svg,
+.page-id-12#top #header.av_header_transparency .widget,
+.page-id-12#top #header.av_header_transparency .widget a,
+.page-id-12#top #header.av_header_transparency .widget svg,
+.page-id-5289#top #header.av_header_transparency .widget,
+.page-id-5289#top #header.av_header_transparency .widget a,
+.page-id-5289#top #header.av_header_transparency .widget svg,
+.page-id-5302#top #header.av_header_transparency .widget,
+.page-id-5302#top #header.av_header_transparency .widget a,
+.page-id-5302#top #header.av_header_transparency .widget svg,
+.archive.tag#top #header.av_header_transparency .widget,
+.archive.tag#top #header.av_header_transparency .widget a,
+.archive.tag#top #header.av_header_transparency .widget svg,
+.archive.category#top #header.av_header_transparency .widget,
+.archive.category#top #header.av_header_transparency .widget a,
+.archive.category#top #header.av_header_transparency .widget svg,
+.blog#top #header.av_header_transparency .widget,
+.blog#top #header.av_header_transparency .widget a,
+.blog#top #header.av_header_transparency .widget svg {
+    color: white;
+    fill: white;
+}
+
+
+/*=========================== Main Menu ==================================*/
+
+/* Full width header */
+.av-logo-container {
+    max-width: 100% !important;
+    padding: 0;
+}
+
+/* Position of the logo */
+div .logo {
+    left: 100px;	
+}
+
+/* Position of the main menu */
+nav.main_menu {
+    left: 300px;
+}
+
+.main_menu {
+    right: auto !important;
+}
+
+
+/* Position and size of the mega menu */
+.main_menu .avia_mega_div {
+    position: fixed !important;
+    left: 300px !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    max-width: 1000px !important;
+    box-sizing: border-box;
+    z-index: 9999; 
+}
+
+/* Make mega menu 3 columns equel width */
+#header .three.units {
+    width: 33.33% !important;
+}
+
+	
+/* Main menu left to right */
+#top .main_menu .menu li {
+    float: left;
+}
+
+/* Main menu first level links */
+#top #header .av-main-nav > li > a {
+	font-size: 18px;
+	color: #000000;
+	font-weight:500;
+}
+
+/* Spacing between main menu items */
+#top .av-main-nav > li {
+	padding: 0px 5px 0px 10px;
+	margin-right: 5px;
+}
+
+/* Add dropdown arrows to menu items */
+#avia-menu .menu-item-has-children > a:before {
+    content: '\e873';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'entypo-fontello';
+	transition: transform 0.3s ease;
+}
+
+#avia-menu .menu-item-has-children:hover > a:before {
+    transform: rotate(180deg);
+	/*content: '\e876';*/
+}
+
+/* Remove underline when hovering etc main menu items */
+#top #avia-menu li.current-menu-item > a > .avia-menu-fx,
+#top #avia-menu .menu-item:hover > a > .avia-menu-fx {
+    background-color: transparent !important;
+    border: none !important;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Remove the border on bottom of the header */
+#header_main {
+  border-bottom-width: 0px;
+  }
+
+/* Fix borders of title in search page for ex */
+#top .title_container {
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;  
+}
+
+/* Main menu item white on transparent header */
+.page-id-3525#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, .page-id-12#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a,
+.page-id-5289#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, .page-id-5302#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a,
+.archive.tag#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a, .archive.category#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a,
+.blog#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a {
+	color:#ffffff;
+}
+
+/* Remove underline when hovering mega menu title links */
+#top #header .mega_menu_title a:hover {
+    text-decoration: none;
+}
+
+/* Bold on hover top level mega menu items */
+#top .av-main-nav > li:hover > a {
+  font-weight: bold !important;
+}
+
+
+/* Mega menu bullets replacement */
+@media (min-width: 768px) {
+	#top .avia-bullet {
+		border: none!important;
+		margin-top: 0 !important;    
+	}
+
+	#top .avia-bullet:before {
+		content: '\e874'; /*arrow left*/
+		font-family: 'entypo-fontello';    
+		font-size:11px;
+		line-height:1em;
+		position:absolute;
+		top:10px;
+		left:-3px;
+	}
+}
+
+/* Add border bottom to mega menu titles */
+#top #header .mega_menu_title,
+#top #header .mega_menu_title a {
+    border-bottom: 1px solid #ccc;
+    background: #fff;
+    margin-bottom: 8px;
+    padding: 0 0 6px 0;
+}
+
+
+/* Remove borders in Enfold mega menu */
+#header .avia_mega_div ul li, 
+#header .sub-menu li {
+    border: none !important;
+}
+
+#header .avia_mega_div, 
+#header .sub-menu, 
+#header .avia_mega_div ul {
+    border: none !important;
+  /*  box-shadow: none !important; */
+}
+
+/*-------- Maga menu spacing --------*/
+/* 1st mega menu row 
+#top #header .avia_mega_div > .sub-menu {
+    padding: 10px 30px 30px 30px;
+
+}*/
+/* 2nd mega menu row 
+#top #header .avia_mega_div > .sub-menu.avia_mega_hr {
+    padding-top: 10px;
+
+}*/
+
+
+/* move notification sticky bar banner behind the mega menu */
+.mtsnb {
+    z-index: 10 !important;	
+}
+
+
+/*----------- HE ans EN menu items show only on mobile ------------*/
+
+/* Hide EN menu item by default */
+.mobile_only {
+    display: none;
+}
+
+/* Show only on mobile */
+@media (max-width: 767px) {
+    .mobile_only {
+        display: block;
+    }
+}
+
+/* Hide HE menu item by default on English pages */
+.page-id-5289#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5298#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5300#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5302#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5304#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5306#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5308#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5310#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5336#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5339#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5341#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-5343#top .av-main-nav li.english_menu_item.mobile_only,
+.page-id-13669#top .av-main-nav li.english_menu_item.mobile_only {
+    display: none !important;
+}
+
+
+/*---------- Main Menu on English pages -----------*/
+
+/* Align links to the left */
+#top .main_menu .menu > li.english_menu_item ul a {
+    text-align: left;
+}
+
+/* Position block to the left of the top-level item */
+#top .main_menu .menu > li.english_menu_item > ul {
+    right: auto;
+    left: 0;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+
+
+#top .av-main-nav li.english_menu_item {
+	display:none;
+}
+
+.page-id-5289#top .av-main-nav li, .page-id-5298#top .av-main-nav li, .page-id-5300#top .av-main-nav li,
+.page-id-5302#top .av-main-nav li, .page-id-5304#top .av-main-nav li, .page-id-5306#top .av-main-nav li, 
+.page-id-5308#top .av-main-nav li, .page-id-13669#top .av-main-nav li, .page-id-5310#top .av-main-nav li,
+.page-id-5336#top .av-main-nav li, .page-id-5339#top .av-main-nav li, .page-id-5341#top .av-main-nav li,
+.page-id-5343#top .av-main-nav li {
+	display:none;
+}
+
+.page-id-5289#top .av-main-nav li.english_menu_item, .page-id-5298#top .av-main-nav li.english_menu_item, .page-id-5300#top .av-main-nav li.english_menu_item,
+.page-id-5302#top .av-main-nav li.english_menu_item, .page-id-5304#top .av-main-nav li.english_menu_item, .page-id-5306#top .av-main-nav li.english_menu_item,
+.page-id-5308#top .av-main-nav li.english_menu_item, .page-id-13669#top .av-main-nav li.english_menu_item, .page-id-5310#top .av-main-nav li.english_menu_item,
+.page-id-5336#top .av-main-nav li.english_menu_item, .page-id-5339#top .av-main-nav li.english_menu_item, .page-id-5341#top .av-main-nav li.english_menu_item,
+.page-id-5343#top .av-main-nav li.english_menu_item {
+	display:block !important;
+}
+
+@media only screen and (max-width: 767px){
+	.page-id-5289#top .av-main-nav li.english_menu_item, .page-id-5298#top .av-main-nav li.english_menu_item, .page-id-5300#top .av-main-nav li.english_menu_item,
+	.page-id-5302#top .av-main-nav li.english_menu_item, .page-id-5304#top .av-main-nav li.english_menu_item, .page-id-5306#top .av-main-nav li.english_menu_item,
+	.page-id-5308#top .av-main-nav li.english_menu_item, .page-id-13669#top .av-main-nav li.english_menu_item, .page-id-5310#top .av-main-nav li.english_menu_item,
+	.page-id-5336#top .av-main-nav li.english_menu_item, .page-id-5339#top .av-main-nav li.english_menu_item, .page-id-5341#top .av-main-nav li.english_menu_item,
+	.page-id-5343#top .av-main-nav li.english_menu_item	{
+		display:none !important;
+	}
+}
+
+#av-burger-menu-ul > li.english_menu_item {
+	display:none;
+}
+
+.page-id-5289 #av-burger-menu-ul > li, .page-id-5298 #av-burger-menu-ul > li, .page-id-5300 #av-burger-menu-ul > li,
+.page-id-5302 #av-burger-menu-ul > li, .page-id-5304 #av-burger-menu-ul > li, .page-id-5306 #av-burger-menu-ul > li,
+.page-id-5308 #av-burger-menu-ul > li, .page-id-13669 #av-burger-menu-ul > li, .page-id-5310 #av-burger-menu-ul > li,
+.page-id-5336 #av-burger-menu-ul > li, .page-id-5339 #av-burger-menu-ul > li, .page-id-5341 #av-burger-menu-ul > li,
+.page-id-5343 #av-burger-menu-ul > li {
+	display:none;
+}
+
+.page-id-5289 #av-burger-menu-ul > li.english_menu_item, .page-id-5298 #av-burger-menu-ul > li.english_menu_item,
+.page-id-5300 #av-burger-menu-ul > li.english_menu_item, .page-id-5302 #av-burger-menu-ul > li.english_menu_item,
+.page-id-5304 #av-burger-menu-ul > li.english_menu_item, .page-id-5306 #av-burger-menu-ul > li.english_menu_item,
+.page-id-5308 #av-burger-menu-ul > li.english_menu_item, .page-id-13669 #av-burger-menu-ul > li.english_menu_item,
+.page-id-5310 #av-burger-menu-ul > li.english_menu_item, .page-id-5336 #av-burger-menu-ul > li.english_menu_item,
+.page-id-5339 #av-burger-menu-ul > li.english_menu_item, .page-id-5341 #av-burger-menu-ul > li.english_menu_item,
+.page-id-5343 #av-burger-menu-ul > li.english_menu_item {
+	display:block !important;
+	text-align:left;
+}
+
+#av-burger-menu-ul li.english_menu_item a {
+    text-align: left !important;
+}
+
+
+/* ----------------------- Mega menu buttons and images ---------------------------- */
+/* menu_button   =>   class for a button with no border and no icon */
+/* menu_button_shop_icon   =>   class for a button with border and shopping cart icon */
+/* menu_button_arrow_noboder   =>   class for a button with an arrow icon and no border */
+/* menu_img ==> class for mega menu images */
+
+#top .av-main-nav ul.sub-menu li.menu_button,
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon,
+#top .av-main-nav ul.sub-menu li.menu_button_arrow_noboder {
+  display: inline-block !important;
+  width: auto !important;
+  flex: 0 0 auto !important; 
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#top .av-main-nav ul.sub-menu li.menu_button > a,
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon > a{
+  display: inline-block !important;
+  width: auto !important;
+  padding: 2px 16px !important;
+  border: 2px solid #0870d3 !important;
+  color: #0870d3 !important;
+  background: transparent !important;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: right;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  margin-top: 10px !important;
+  margin-bottom: 5px !important;  
+}
+
+#top .av-main-nav ul.sub-menu li.menu_button_arrow_noboder > a { /* menu button with arrow icon and no border */
+  color: #0870d3 !important;
+  background: transparent !important;
+  text-decoration: none;
+  text-align: right;
+  white-space: nowrap;
+  margin-top: 5px !important;
+ /* margin-bottom: 10px !important;  */
+}
+
+#top .av-main-nav ul.sub-menu li.menu_button > a:hover,
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon > a:hover {
+  background-color: #0870d3 !important;
+  color: #ffffff !important;
+}
+
+#top .av-main-nav ul.sub-menu li.menu_button_arrow_noboder  > a:hover {
+	font-weight: bold !important;; 
+	}
+	
+#top .av-main-nav ul.sub-menu li.menu_button,
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon,
+#top .av-main-nav ul.sub-menu li.menu_button_arrow_noboder {
+  text-align: right;
+  width: 100% !important; 
+}
+
+#top .av-main-nav ul.sub-menu li.menu_button > a,
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon > a,
+#top .av-main-nav ul.sub-menu li.menu_button_arrow_noboder > a {
+  display: inline-block !important; 
+}
+
+
+/* Remove mega menu submenu items arrow bullet before for buttons and images */
+.menu_img .avia-bullet,
+.menu_button .avia-bullet,
+.menu_button_shop_icon .avia-bullet,
+.menu_button_arrow_noboder .avia-bullet {
+    display: none !important;
+}
+
+
+/* Adition for mega menu buttons with icon */
+
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon > a::before {
+  content: '\e859'; /*shopping cart*/
+  font-family: 'entypo-fontello'; 
+  display: inline-block;
+  margin-left: 8px !important; 
+  font-size: 18px;
+  color: #0870d3;
+}
+
+/* Fix padding for mega menu images */
+.main_menu .avia_mega_div ul li.menu_img a,
+.main_menu .avia_mega_div ul li.menu_img {
+	padding: 5px 0 !important;	
+}
+
+/* Rounded borders for mega menu images */
+#top .av-main-nav li.menu_img img {
+  border-radius: 10px;
+}
+
+
+#top .av-main-nav ul.sub-menu li.menu_button_shop_icon > a:hover::before {
+  color: #ffffff !important; 
+}
+
+#top .av-main-nav ul.sub-menu li.menu_button_arrow_noboder > a::before {
+  content: '\e874'; /*arrow left*/
+  font-family: 'entypo-fontello'; 
+  display: inline-block;
+  margin-left: 8px !important; 
+  font-size: 18px;
+  color: #0870d3;
+}
+
+
+
+
+/* ==========================================================
+                   SUBMENU
+============================================================= */
+
+#top .sticky_placeholder	{ height:51px; position: relative; clear:both; }
+#top .av-submenu-container	{ height:57px; border-bottom-width: 0px; }
+#top .av-subnav-menu	  { margin-top:22px; }
+#top .av-subnav-menu > li {padding:0; display: inline-block;}
+#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:0px; font-size:18px; color:#fff; margin-left:2px; background: #676767;}
+#top .av-subnav-menu > li > a:hover, #top .av-subnav-menu li.current_page_item a, #top .av-subnav-menu li.current-menu-parent  a, #top .av-subnav-menu li.current_page_ancestor  a{color:#fff !important; background:#fff !important;}
+
+@media only screen and (max-width: 767px)
+{
+	.responsive #top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive #top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+	.responsive #top .sticky_placeholder	{ height:0px !important;}
+}
+
+
+#top .av-subnav-menu > li ul {
+	text-align: right;
+    font-size: 15px;
+	left: inherit;
+	border-top: 2px solid #636363;
+	width: 240px;
+}
+
+@media (min-width: 768px) {
+	#top .av-subnav-menu > li ul ul {
+		left: -240px !important;
+		top: 0 !important;
+	}
+}
+	
+#top .av-submenu-pos-right.av-subnav-menu > li ul ul {
+    left: -225px;
+}
+*/
+
+
+
+#top .av-subnav-menu  .sub-menu > li > a {
+color:#000;
+}
+
+#top .av-subnav-menu .sub-menu > li > a:hover{
+background: #f8f8f8 !important;
+}
+
+/*---------- Corses Sub-Menu (Courses-hila button) start---------------------*/
+
+
+/* ============/*---------- End- Corses Sub-Menu (Courses-hila button)--------------------- */
+
+ /*=========== Mobile Menu ================ */
+
+/*================================================== */
+
+/* ===========================================================
+             Submenus
+============================================================== */
+
+#top .av-submenu-container.sw_submenu,
+#top .av-submenu-container.gis_submenu,
+#top .av-submenu-container.mw_submenu,
+#top .av-submenu-container.sy_submenu,
+#top .av-submenu-container.dp_submenu,
+#top .av-submenu-container.blue_submenu {
+	height: 70px !important;
+}
+
+#top .sw_submenu .av-subnav-menu > li > a,
+#top .gis_submenu .av-subnav-menu > li > a,
+#top .mw_submenu .av-subnav-menu > li > a,
+#top .sy_submenu .av-subnav-menu > li > a,
+#top .dp_submenu .av-subnav-menu > li > a,
+#top .blue_submenu .av-subnav-menu > li > a {
+	color:#fff !important;  	
+}
+
+/* Full width submenu */
+#top .av-subnav-menu {
+    width: 100vw;
+    left: 0 !important;
+    position: fixed;
+}
+
+/* Up and down arrows for submenu items with children */
+#top .av-subnav-menu .menu-item-has-children > a:after {
+    content: '\e873'; /* Down arrow */
+    font-family: 'entypo-fontello';
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    position: relative; 
+    left: -5px;
+	margin-right:2px;	
+}
+
+/* Bigger arrow on desktop */
+@media (min-width: 768px) {
+	#top .av-subnav-menu .menu-item-has-children > a:after {
+    font-size: 18px;
+	}	
+}
+
+
+/* Rotate arrow if submenu is open */
+#top .av-subnav-menu .menu-item-has-children.submenu-open > a:after {
+    transform: rotate(180deg);
+}
+
+/* Desktop hover effect */
+@media (min-width: 768px) {
+    #top .av-subnav-menu .menu-item-has-children:hover > a:after {
+        transform: rotate(180deg);
+    }
+}
+
+/* Logo tchumi */
+@media (min-width: 769px) {	
+	#top .av-subnav-menu > li:first-child {
+		margin-right: 120px;
+	}
+
+	#top .av-subnav-menu > li.logo_tchumi {
+		margin-top: -15px;
+		float: left;
+		margin-left: 90px;
+	}
+	
+	#top .av-subnav-menu > li.logo_tchumi a{
+		padding-bottom: 4px !important;
+	}
+
+	#top .av-subnav-menu > li.first_after_logo {
+		margin-right: 120px;
+	}
+
+}
+
+
+#top.rtl .av-subnav-menu > li:first-child a { 
+    border-left-style: none; 
+}
+
+
+/* Second level submenu items */
+#top .av-subnav-menu > li ul {
+    top: 48px;
+    border-width: 0px;
+}
+
+#top .av-subnav-menu > li > ul li a {
+	color:#fff !important;
+	font-size:16px;
+}
+
+#top .sw_submenu .av-subnav-menu > li > ul li a {background: #C21515 !important;}
+#top .gis_submenu .av-subnav-menu > li > ul li a {background: #406b4a !important;}
+#top .mw_submenu .av-subnav-menu > li > ul li a {background: #005886 !important;}
+#top .dp_submenu .av-subnav-menu > li > ul li a {background: #68696c !important;}
+#top .blue_submenu .av-subnav-menu > li > ul li a {background: #24385d !important;}
+
+
+/* Second level submenu link hover */
+#top .av-subnav-menu .sub-menu li a:hover {
+	color:#fff !important;
+	font-weight: 600;
+	text-shadow: 0px 2px 10px #333;
+}
+
+#top .sw_submenu .av-subnav-menu .sub-menu li a:hover {background:#C21515 !important;}
+#top .gis_submenu .av-subnav-menu .sub-menu li a:hover {background:#406b4a !important;}
+#top .mw_submenu .av-subnav-menu .sub-menu li a:hover {background:#005886 !important;}
+#top .dp_submenu .av-subnav-menu .sub-menu li a:hover {background:#68696c !important;}
+#top .blue_submenu .av-subnav-menu .sub-menu li a:hover {background:#24385d !important;}
+
+
+
+
+/*  sw_submenu  */
+#top .av-submenu-container.sw_submenu,
+#top .sw_submenu .av-subnav-menu > li > a,
+#top .sw_submenu.main_color .mobile_menu_toggle { /* on mobile */
+	background: #D73733 !important;
+}
+
+/*  gis_submenu  */
+#top .av-submenu-container.gis_submenu,
+#top .gis_submenu .av-subnav-menu > li > a,
+#top .gis_submenu.main_color .mobile_menu_toggle { /* on mobile */
+	background: #558d61 !important;
+}
+
+/*  mw_submenu  */
+#top .av-submenu-container.mw_submenu,
+#top .mw_submenu .av-subnav-menu > li > a,
+#top .mw_submenu.main_color .mobile_menu_toggle { /* on mobile */
+	background: #5381a0 !important;
+}
+
+/*  dp_submenu  */
+#top .av-submenu-container.dp_submenu,
+#top .dp_submenu .av-subnav-menu > li > a,
+#top .dp_submenu.main_color .mobile_menu_toggle { /* on mobile */
+	background: #898a8e !important;
+}
+
+/*  sy_submenu  */
+#top .av-submenu-container.sy_submenu,
+#top .sy_submenu .av-subnav-menu > li > a,
+#top .sy_submenu.main_color .mobile_menu_toggle { /* on mobile */
+	background: #434343 !important;
+}
+
+/*  blue_submenu  */
+#top .av-submenu-container.blue_submenu,
+#top .blue_submenu .av-subnav-menu > li > a,
+#top .blue_submenu.main_color .mobile_menu_toggle { /* on mobile */
+	background: #24385d !important;
+}
+
+
+
+	
+#top .sw_submenu .av-subnav-menu > li > a:hover,
+#top .gis_submenu .av-subnav-menu > li > a:hover,
+#top .mw_submenu .av-subnav-menu > li > a:hover,
+#top .dp_submenu .av-subnav-menu > li > a:hover,
+#top .sy_submenu .av-subnav-menu > li > a:hover,
+#top .blue_submenu .av-subnav-menu > li > a:hover,
+#top .sw_submenu .av-subnav-menu > li.current_page_item > a,
+#top .gis_submenu .av-subnav-menu > li.current_page_item > a,
+#top .mw_submenu .av-subnav-menu > li.current_page_item > a,
+#top .sy_submenu .av-subnav-menu > li.current_page_item > a,
+#top .dp_submenu .av-subnav-menu > li.current_page_item > a,
+#top .blue_submenu .av-subnav-menu > li.current_page_item > a {
+	color:#fff !important;
+	font-weight: 600;
+	text-shadow: 0px 2px 10px #333;
+}
+
+/* ----------- Submenus on Mobile ----------- */
+
+/* Submenu items align to the right on mobile */
+@media only screen and (max-width: 767px) {
+	.responsive #top .av-menu-mobile-active .av-subnav-menu > li > a {
+		text-align: right !important; 
+	}
+}
+
+
+
+#top .main_color .av-menu-mobile-active .av-subnav-menu > li > a:before {
+	display: none;	
+}
+
+#top .sw_submenu.main_color .mobile_menu_toggle,
+#top .gis_submenu.main_color .mobile_menu_toggle,
+#top .mw_submenu.main_color .mobile_menu_toggle,
+#top .sy_submenu.main_color .mobile_menu_toggle,
+#top .dp_submenu.main_color .mobile_menu_toggle,
+#top .blue_submenu.main_color .mobile_menu_toggle {
+    color: #fff;	
+}
+	
+#top .sw_submenu .mobile_menu_toggle,
+#top .gis_submenu .mobile_menu_toggle,
+#top .mw_submenu .mobile_menu_toggle,
+#top .sy_submenu .mobile_menu_toggle,
+#top .dp_submenu .mobile_menu_toggle,
+#top .blue_submenu .mobile_menu_toggle {
+    border-width: 0px;
+}
+
+#top .sw_submenu .mobile_menu_toggle .av-current-placeholder,
+#top .gis_submenu .mobile_menu_toggle .av-current-placeholder,
+#top .mw_submenu .mobile_menu_toggle .av-current-placeholder,
+#top .sy_submenu .mobile_menu_toggle .av-current-placeholder,
+#top .dp_submenu .mobile_menu_toggle .av-current-placeholder,
+#top .blue_submenu .mobile_menu_toggle .av-current-placeholder {
+    font-size: 14px;
+    vertical-align: bottom;
+    display: none;
+    margin-left: 20px;
+}
+
+	@media only screen and (max-width: 767px){
+		.responsive #top .av-menu-mobile-active .av-subnav-menu > li > a {
+			text-align: right;
+		}
+		
+		.responsive #top .av-menu-mobile-active .av-subnav-menu > li > ul > li a:hover {
+			color: #fff !important;	
+		}		
+		
+		.responsive #top .av-submenu-container.sw_submenu,
+		.responsive #top .av-submenu-container.gis_submenu,
+		.responsive #top .av-submenu-container.mw_submenu,
+		.responsive #top .av-submenu-container.sy_submenu,
+		.responsive #top .av-submenu-container.dp_submenu,
+		.responsive #top .av-submenu-container.blue_submenu	{ 
+			height: auto !important;
+		}
+		
+		.responsive #top .av-subnav-menu {
+			margin-top: 1px !important;		
+		}
+		
+		.responsive #top .av-menu-mobile-active .av-subnav-menu > li a:before {
+			display: none;	
+		}
+		
+		div .title_overlay_adj {
+			bottom: 0px;
+		}
+		
+		div#colaje .avia-image-container.img_adj .av-image-caption-overlay {
+			height: 100%;
+		}
+
+	}
+
+
+/* Color of the mobile hamburger icon */	
+@media only screen and (max-width: 989px) {
+    #top .av-submenu-container .mobile_menu_toggle .avia-svg-icon svg,
+    #top .main_color .mobile_menu_toggle .avia-svg-icon svg:first-child {
+        fill: #ffffff !important;
+    }
+}
+
+
+/* =============== End of Submenus Design ===================== */
+
+
+
+
+h1 {
+font-size: 50px;
+font-weight:normal;
+color:#434343;
+padding:0px;
+margin: 0;
+}
+
+h2 {
+font-size: 30px;
+font-weight:normal;
+color:#636363;
+padding:20px 0px;
+}
+
+.textwidget a:hover {
+color:#636363;
+}
+
+hr.smallmargin {
+margin: 0;
+}
+
+hr.margintop {
+margin: 3px 0px 2px 0px;
+}
+
+img.smallgap {
+margin:5px 0px 0px 10px;
+}
+
+.textwidget p{
+margin: 10px 0px;
+}
+
+body div .avia-button {
+border-radius: 0px;
+border: 1px solid #636363;
+font-weight: bold;
+}
+
+.main_color .avia-color-theme-color-subtle {
+border-radius: 0px;
+border: 1px solid #636363;
+font-weight: bold;
+}
+
+.avia-button.avia-size-small {
+padding: 5px 12px 5px 5px;
+font-size: 14px;
+min-width: 90px;
+text-align: right;
+}
+
+.avia-button.avia-size-small:hover {
+background-color:#f0f0f0;
+}
+
+.avia-button.avia-size-medium {
+padding: 10px 12px 10px 5px;
+font-size: 16px;
+min-width: 90px;
+text-align: right;
+}
+
+.avia-button.avia-size-medium:hover {
+background-color:#f0f0f0;
+}
+
+.avia-section {
+min-height: 50px;
+}
+
+#partners_home {
+padding-top:40px;
+}
+
+#partners_home  img{
+padding: 0 15px 0 12px;
+border-right:1px solid #d0d0d0;
+width: 100%;
+}
+
+#partners_home .av-styling-no-styling .avia-image-container-inner, .av-styling-no-styling .avia_image {
+border: none !important;
+padding-right:0px !important;
+}
+
+div .avia-layerslider .ls-fullwidth .ls-bottom-slidebuttons {
+position: absolute;
+left: 150px;
+}
+
+#top .avia-layerslider .ls-nav-start, #top .avia-layerslider .ls-nav-stop {
+display:none;
+}
+
+#top .avia-layerslider .ls-bottom-slidebuttons a {
+margin: 0 10px 0 10px;
+}
+
+#socket .copyright {
+float: left;
+direction:ltr;
+}
+
+.responsive .container {
+max-width: 1200px;
+}
+
+.container {
+padding:0px;
+}
+
+.iconbox_left .iconbox_icon {
+top: -10px;
+left: 5px;
+}
+
+.avia-image-container.avia-align-left {
+margin:0;
+}
+
+
+
+
+/* #Lists
+================================================== */
+
+	ul.green li, li.green { background:url(https://www.systematics.co.il/wp-content/uploads/bullet-giso.png) no-repeat right 8px; list-style: none; margin:0; }
+	ul.red li, li.red { background:url(https://www.systematics.co.il/wp-content/uploads/bullet-3dcadplm.png) no-repeat right 8px; list-style: none; margin:0; }
+	ul.blue li, li.blue { background:url(https://www.systematics.co.il/wp-content/uploads/bullet-tcmbd.png) no-repeat right 8px; list-style: none; margin:0; }
+	ul.grey li, li.grey { background:url(https://www.systematics.co.il/wp-content/uploads/bullet-3dprinting.png) no-repeat right 8px; list-style: none; margin:0; }
+	ul.black li, li.black { background:url(https://www.systematics.co.il/wp-content/uploads/bullet-systematics.png) no-repeat right 8px; list-style: none; margin:0; }
+	ul.green li, li.green, ul.red li, li.red, ul.blue li, li.blue, ul.grey li, li.grey,
+	 ul.black li, li.black { padding:2px 20px 2px 0px; margin: 0 0 0px 0; } 
+
+/*================================================== */
+
+.alternate_color a, .alternate_color .widget_first, .alternate_color strong, .alternate_color b, .alternate_color b a, .alternate_color strong a, .alternate_color #js_sort_items a:hover, .alternate_color #js_sort_items a.active_sort, .alternate_color .av-sort-by-term a.active_sort, .alternate_color .special_amp, .alternate_color .taglist a.activeFilter, .alternate_color #commentform .required, #top .alternate_color .av-no-color.av-icon-style-border a.av-icon-char {
+color: inherit;
+}
+
+.responsive #top #main .sidebar.smartphones_sidebar_active {
+text-align: right;
+}
+
+#footer .widget {
+margin: 0;
+}
+
+.widget {
+padding: 30px 0 0px 0;
+}
+
+.header_color #submit, .header_color input[type='submit']{
+background-color: #636363;
+border-color: #636363;
+}
+
+#top .av_header_transparency .avia-menu-fx {
+display:none;
+}
+
+.archive.tag#top #breadcrumbs a,
+.archive.category#top #breadcrumbs a{
+	color: #fff;
+}
+
+#top .av-main-nav > li#menu-item-21619, #top .av-main-nav > li#menu-item-5327 {
+background: none !important;
+}
+
+
+
+
+.avia-image-container-inner, .avia_image {
+  border-radius: 0px;
+  }
+  
+#contactus img{
+margin-top:0px;
+}
+
+/* ======================================================================================================================================================
+THUMIM
+====================================================================================================================================================== */
+
+/* Thumim - footer
+================================================== */
+/* ====== GIS ========= */
+.page-id-3710 #footer, 
+.page-id-3727 #footer, 
+.page-id-3729 #footer, 
+.page-id-3731 #footer, 
+.page-id-3733 #footer, 
+.page-id-5336 #footer, 
+.page-id-6151 #footer, 
+.page-id-6170 #footer, 
+.page-id-6172 #footer, 
+.page-id-6179 #footer, 
+.page-id-6196 #footer, 
+.page-id-6208 #footer, 
+.page-id-6241 #footer, 
+.page-id-6246 #footer, 
+.page-id-6259 #footer, 
+.page-id-6391 #footer, 
+.page-id-6875 #footer, 
+.page-id-8354 #footer, 
+.page-id-8357 #footer, 
+.page-id-8359 #footer, 
+.page-id-8361 #footer, 
+.page-id-10309 #footer,
+.page-id-10311 #footer,
+.page-id-10313 #footer,
+.page-id-10315 #footer,
+.page-id-10317 #footer,
+.page-id-10319 #footer,
+.page-id-12979 #footer,
+.page-id-12982 #footer,
+.page-id-12984 #footer,
+.page-id-15186 #footer,
+.page-id-15188 #footer,
+.page-id-15190 #footer,
+.page-id-15192 #footer,
+.page-id-15194 #footer,
+.page-id-15196 #footer,
+.page-id-15198 #footer,
+.page-id-15200 #footer,
+.page-id-15202 #footer,
+.page-id-15623 #footer,
+.page-id-16274 #footer,
+.page-id-16275 #footer,
+.page-id-16276 #footer,
+.page-id-16277 #footer,
+.page-id-16278 #footer,
+.page-id-21029 #footer,
+.page-id-21031 #footer,
+.page-id-21033 #footer,
+.page-id-21035 #footer,
+.page-id-21037 #footer,
+.page-id-28752 #footer,
+.page-id-28754 #footer,
+.page-id-28756 #footer,
+.page-id-28758 #footer,
+.page-id-28760 #footer,
+.page-id-28762 #footer,
+.page-id-28764 #footer,
+.page-id-28766 #footer,
+.page-id-28768 #footer,
+.page-id-28770 #footer,
+.page-id-28772 #footer,
+.page-id-28774 #footer,
+.page-id-38427 #footer,
+.page-id-38429 #footer,
+.page-id-38431 #footer,
+.page-id-38433 #footer,
+.page-id-38435 #footer,
+.page-id-0000 #footer {
+  background-color: #558d61;
+}
+/* ====== CAD/PLM ========= */
+.page-id-3777 #footer, 
+.page-id-3789 #footer, 
+.page-id-3791 #footer, 
+.page-id-3793 #footer, 
+.page-id-3795 #footer, 
+.page-id-4368 #footer, 
+.page-id-4370 #footer, 
+.page-id-4372 #footer, 
+.page-id-4374 #footer, 
+.page-id-4382 #footer, 
+.page-id-4384 #footer, 
+.page-id-4385 #footer, 
+.page-id-5339 #footer, 
+.page-id-6380 #footer, 
+.page-id-8161 #footer, 
+.page-id-8363 #footer, 
+.page-id-8365 #footer, 
+.page-id-8367 #footer, 
+.page-id-8369 #footer, 
+.page-id-9192 #footer, 
+.page-id-9194 #footer, 
+.page-id-9196 #footer, 
+.page-id-9198 #footer, 
+.page-id-9200 #footer, 
+.page-id-9202 #footer, 
+.page-id-9204 #footer, 
+.page-id-9206 #footer, 
+.page-id-9208 #footer,
+.page-id-9267 #footer,
+.page-id-9348 #footer,
+.page-id-9388 #footer,
+.page-id-9390 #footer,
+.page-id-9428 #footer,
+.page-id-9429 #footer,
+.page-id-9430 #footer,
+.page-id-9431 #footer,
+.page-id-9432 #footer,
+.page-id-9433 #footer,
+.page-id-9434 #footer,
+.page-id-9435 #footer,
+.page-id-9436 #footer,
+.page-id-9437 #footer,
+.page-id-11907 #footer,
+.page-id-11909 #footer,
+.page-id-11911 #footer,
+.page-id-12971 #footer,
+.page-id-12973 #footer,
+.page-id-12976 #footer,
+.page-id-13591 #footer,
+.page-id-13596 #footer,
+.page-id-13594 #footer,
+.page-id-13996 #footer,
+.page-id-13598 #footer,
+.page-id-13600 #footer,
+.page-id-16264 #footer,
+.page-id-16266 #footer,
+.page-id-16267 #footer,
+.page-id-16268 #footer,
+.page-id-16269 #footer,
+.page-id-16270 #footer,
+.page-id-16271 #footer,
+.page-id-16272 #footer,
+.page-id-16273 #footer,
+.page-id-17245 #footer,
+.page-id-17247 #footer,
+.page-id-17249 #footer,
+.page-id-17251 #footer,
+.page-id-17253 #footer,
+.page-id-19531 #footer,
+.page-id-19533 #footer,
+.page-id-19535 #footer,
+.page-id-19537 #footer,
+.page-id-19539 #footer,
+.page-id-19541 #footer,
+.page-id-19543 #footer,
+.page-id-19545 #footer,
+.page-id-19547 #footer,
+.page-id-20987 #footer,
+.page-id-20989 #footer,
+.page-id-20991 #footer,
+.page-id-20993 #footer,
+.page-id-20995 #footer,
+.page-id-20997 #footer,
+.page-id-20999 #footer,
+.page-id-21001 #footer,
+.page-id-21003 #footer,
+.page-id-21005 #footer,
+.page-id-23793 #footer,
+.page-id-23795 #footer,
+.page-id-23797 #footer,
+.page-id-23799 #footer,
+.page-id-23801 #footer,
+.page-id-23803 #footer,
+.page-id-23805 #footer,
+.page-id-23807 #footer,
+.page-id-23809 #footer,
+.page-id-23811 #footer,
+.page-id-26540 #footer,
+.page-id-26542 #footer,
+.page-id-26544 #footer,
+.page-id-26546 #footer,
+.page-id-26548 #footer,
+.page-id-26550 #footer,
+.page-id-26552 #footer,
+.page-id-26554 #footer,
+.page-id-26556 #footer,
+.page-id-28680 #footer,
+.page-id-28682 #footer,
+.page-id-28684 #footer,
+.page-id-28686 #footer,
+.page-id-28688 #footer,
+.page-id-28690 #footer,
+.page-id-28692 #footer,
+.page-id-28694 #footer,
+.page-id-28696 #footer,
+.page-id-28698 #footer,
+.page-id-28700 #footer,
+.page-id-28702 #footer,
+.page-id-33755 #footer,
+.page-id-33757 #footer,
+.page-id-33759 #footer,
+.page-id-33761 #footer,
+.page-id-33763 #footer,
+.page-id-33765 #footer,
+.page-id-33767 #footer,
+.page-id-33769 #footer,
+.page-id-33771 #footer,
+.page-id-33773 #footer,
+.page-id-33775 #footer,
+.page-id-33777 #footer,
+.page-id-33779 #footer,
+.page-id-33781 #footer,
+.page-id-33783 #footer,
+.page-id-102319 #footer,
+.page-id-0000 #footer {
+  background-color: #D73733;
+}
+/* ====== TC ========= */
+.page-id-3779 #footer, 
+.page-id-3804 #footer, 
+.page-id-3806 #footer, 
+.page-id-3808 #footer, 
+.page-id-3810 #footer, 
+.page-id-5341 #footer, 
+.page-id-8464 #footer, 
+.page-id-8786 #footer, 
+.page-id-8784 #footer, 
+.page-id-8780 #footer, 
+.page-id-8782 #footer,
+.page-id-10321 #footer,
+.page-id-10323 #footer,
+.page-id-10325 #footer,
+.page-id-10327 #footer,
+.page-id-10329 #footer,
+.page-id-10331 #footer,
+.page-id-11897 #footer,
+.page-id-11899 #footer,
+.page-id-11901 #footer,
+.page-id-11903 #footer,
+.page-id-11905 #footer,
+.page-id-12986 #footer,
+.page-id-12988 #footer,
+.page-id-12990 #footer,
+.page-id-15204 #footer,
+.page-id-15206 #footer,
+.page-id-15208 #footer,
+.page-id-15210 #footer,
+.page-id-15212 #footer,
+.page-id-15214 #footer,
+.page-id-15216 #footer,
+.page-id-15218 #footer,
+.page-id-15220 #footer,
+.page-id-16279 #footer,
+.page-id-16280 #footer,
+.page-id-16281 #footer,
+.page-id-16282 #footer,
+.page-id-16283 #footer,
+.page-id-16284 #footer,
+.page-id-16285 #footer,
+.page-id-16286 #footer,
+.page-id-16287 #footer,
+.page-id-16455 #footer,
+.page-id-19549 #footer,
+.page-id-19551 #footer,
+.page-id-19555 #footer,
+.page-id-19553 #footer,
+.page-id-19559 #footer,
+.page-id-19561 #footer,
+.page-id-19563 #footer,
+.page-id-19566 #footer,
+.page-id-19557 #footer,
+.page-id-21470 #footer,
+.page-id-21472 #footer,
+.page-id-21474 #footer,
+.page-id-21478 #footer,
+.page-id-21480 #footer,
+.page-id-21482 #footer,
+.page-id-21484 #footer,
+.page-id-21486 #footer,
+.page-id-24576 #footer,
+.page-id-24578 #footer,
+.page-id-24580 #footer,
+.page-id-24582 #footer,
+.page-id-24584 #footer,
+.page-id-24586 #footer,
+.page-id-24588 #footer,
+.page-id-24590 #footer,
+.page-id-28728 #footer,
+.page-id-28730 #footer,
+.page-id-28732 #footer,
+.page-id-28734 #footer,
+.page-id-28736 #footer,
+.page-id-28738 #footer,
+.page-id-28740 #footer,
+.page-id-28742 #footer,
+.page-id-28744 #footer,
+.page-id-28746 #footer,
+.page-id-28748 #footer,
+.page-id-28750 #footer,
+.page-id-38409 #footer,
+.page-id-38411 #footer,
+.page-id-38413 #footer,
+.page-id-38415 #footer,
+.page-id-38417 #footer,
+.page-id-38419 #footer,
+.page-id-38421 #footer,
+.page-id-38423 #footer,
+.page-id-38425 #footer,
+.page-id-0000 #footer {
+  background-color: #5381A0;
+}
+/* ====== 3DP ========= */
+.page-id-3781 #footer, 
+.page-id-3819 #footer, 
+.page-id-3821 #footer, 
+.page-id-3823 #footer, 
+.page-id-3825 #footer, 
+.page-id-5343 #footer, 
+.page-id-8041 #footer, 
+.page-id-8455 #footer, 
+.page-id-8458 #footer, 
+.page-id-8462 #footer, 
+.page-id-8788 #footer, 
+.page-id-8790 #footer, 
+.page-id-8792 #footer, 
+.page-id-8794 #footer,
+.page-id-10295 #footer,
+.page-id-10299 #footer,
+.page-id-10301 #footer,
+.page-id-10303 #footer,
+.page-id-10305 #footer,
+.page-id-10307 #footer,
+.page-id-12965 #footer,
+.page-id-12967 #footer,
+.page-id-12969 #footer,
+.page-id-13160 #footer,
+.page-id-13166 #footer,
+.page-id-14009 #footer,
+.page-id-14011 #footer,
+.page-id-14018 #footer,
+.page-id-14015 #footer,
+.page-id-14020 #footer,
+.page-id-14022 #footer,
+.page-id-14024 #footer,
+.page-id-14026 #footer,
+.page-id-14028 #footer,
+.page-id-16288 #footer,
+.page-id-16289 #footer,
+.page-id-16290 #footer,
+.page-id-16291 #footer,
+.page-id-16292 #footer,
+.page-id-18930 #footer,
+.page-id-18932 #footer,
+.page-id-18934 #footer,
+.page-id-18936 #footer,
+.page-id-18938 #footer,
+.page-id-21007 #footer,
+.page-id-21009 #footer,
+.page-id-21011 #footer,
+.page-id-21013 #footer,
+.page-id-21015 #footer,
+.page-id-21017 #footer,
+.page-id-21019 #footer,
+.page-id-21021 #footer,
+.page-id-21023 #footer,
+.page-id-21025 #footer,
+.page-id-21027 #footer,
+.page-id-24592 #footer,
+.page-id-24594 #footer,
+.page-id-24596 #footer,
+.page-id-24598 #footer,
+.page-id-24600 #footer,
+.page-id-24602 #footer,
+.page-id-24604 #footer,
+.page-id-24606 #footer,
+.page-id-28704 #footer,
+.page-id-28706 #footer,
+.page-id-28708 #footer,
+.page-id-28710 #footer,
+.page-id-28712 #footer,
+.page-id-28714 #footer,
+.page-id-28716 #footer,
+.page-id-28718 #footer,
+.page-id-28720 #footer,
+.page-id-28722 #footer,
+.page-id-28724 #footer,
+.page-id-28726 #footer,
+.page-id-38437 #footer,
+.page-id-38439 #footer,
+.page-id-38441 #footer,
+.page-id-38443 #footer,
+.page-id-38445 #footer,
+.page-id-38447 #footer,
+.page-id-38449 #footer,
+.page-id-38451 #footer,
+.page-id-38453 #footer,
+.page-id-0000 #footer {
+  background-color: #898A8E;
+}
+
+
+/*================================================== */
+
+#footer {
+  border-top: 0px;
+}
+
+.container_wrap {
+  border-top: 0px;
+}
+
+#socket .container {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#footer .widget_nav_menu  a {
+  padding: 0;
+  font-size:15px;
+  line-height:150%;
+}
+
+#footer .widget_nav_menu  a:hover {
+text-decoration:underline;
+color: #ffffff;
+}
+
+#footer.widget_nav_menu  ul:first-child > .current-menu-item > a, #footer.widget_nav_menu ul:first-child > .current_page_item > a {
+  padding: 0;
+}
+
+#footer .widget_nav_menu .current-menu-item > a, #footer .widget_nav_menu .current_page_item > a {
+  font-weight:normal;
+}
+
+p {
+margin:20px 0;
+}
+
+.avia_textblock {
+  line-height: 150%;
+}
+
+
+
+/* Toggle 
+================================================== */
+div.single_toggle p.toggler {
+padding-top:3px;
+padding-bottom:0px;
+}
+
+span.toggle_icon > span {
+  display: none !important;
+}
+
+span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-systematics1.png") !important;
+}
+
+.activeTitle span.toggle_icon, .activeTitle .toggle_icon .hor_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-systematics.png") !important;
+}
+
+.page-id-4709 span.toggle_icon, .page-id-4715 span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-tcmbd1.png") !important;
+}
+
+.page-id-4709 .activeTitle span.toggle_icon, .page-id-4715 .activeTitle span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-tcmbd.png") !important;
+}
+
+.page-id-4333 span.toggle_icon, .page-id-4302 span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-3dcadplm1.png") !important;
+}
+
+.page-id-4333 .activeTitle span.toggle_icon, .page-id-4302 .activeTitle span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-3dcadplm.png") !important;
+}
+
+.page-id-4355 span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-gis2.png") !important;
+}
+
+.page-id-4355 .activeTitle span.toggle_icon {
+  background: url("https://www.systematics.co.il/wp-content/uploads/bullet-giso.png") !important;
+}
+
+.activeTitle {
+  font-weight:bold;
+}
+
+.page-id-4709 .activeTitle {
+  color: #5381a0;
+}
+
+.page-id-4302 .activeTitle {
+  color: #d73733;
+}
+
+.page-id-4355 .activeTitle {
+  color: #558d61;
+}
+
+.toggle_content li {
+padding:0px;
+margin-left: 15px;
+}
+
+.toggle_content ul {
+margin-left: 7px;
+}
+
+.toggle_content p{
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.toggle_content h6{
+margin-top: 15px;
+}
+
+.toggle_content {
+border-bottom-width:1px;
+border-top:none;
+border-right:none;
+border-left:none;
+}
+
+.toggle_icon {
+  width: 14px;
+  height: 14px;
+  border-style: solid;
+  border-width: 0px;
+  right:0px;
+  top: 18px;
+}
+
+.single_toggle {
+  width: 85%;
+  float: right;
+  border-width: 1px;
+}
+
+.page-id-63 .single_toggle {
+  width: 75%;
+}
+
+.full_toggle .single_toggle {
+  width: 100%;	
+}
+
+.page-id-4333 .single_toggle, .page-id-4715 .single_toggle {
+  width: 65%;
+}
+
+.js_active .toggler {
+padding-right:25px;
+border-style:solid;
+border-width:1px;
+border-right:none;
+border-left:none;
+}
+
+.togglecontainer {
+  margin: 15px 0 30px 0;
+  }
+ 
+@media only screen and (max-width: 767px)
+{
+	.responsive .single_toggle {  width: 100%;}
+	.responsive .toggletitleleft {float:none; margin-left:0px;}
+}
+ 
+.main_color .toggle_content {
+background: #f0f0f0;
+  }
+  
+.page-id-4333 .main_color .toggle_content, .page-id-4715 .main_color .toggle_content {
+background: #f9f9f9;
+  }
+  
+.toggletitleleft {
+float:left;
+margin-left:100px;
+}
+
+.toggletitleimg {
+float:left;
+margin-left:10px;
+}
+
+
+/*================================================== */
+
+/* Toggle - FAQ
+================================================== */
+
+.faq .single_toggle {
+  width: 100%;
+}
+
+.faq span.toggle_icon {
+  background: none !important;
+}
+
+.faq .activeTitle span.toggle_icon, .faq .activeTitle .toggle_icon .hor_icon {
+  background: none !important;
+}
+
+.faq .toggle_icon:before {
+    font-family: 'entypo-fontello';   
+    content:'\e816';    
+    position: absolute;
+    font-size: 24px;
+    top:70%;
+    transform: translateY(-50%);
+    left: 0px;
+    line-height: 0;
+    color:#239de8;
+}
+
+.faq .activeTitle span.toggle_icon:before, .faq .activeTitle .toggle_icon .hor_icon:before {
+    font-family: 'entypo-fontello';   
+    content:'\e819';    
+    position: absolute;
+    font-size: 24px;
+    top:70%;
+    transform: translateY(-50%);
+    left: 0px;
+    line-height: 0;
+    color:#239de8;
+}
+
+.main_color .faq .toggle_content {
+background: #ffffff;
+  }
+
+.faq .toggle_content {
+    border-bottom-width: 0px;
+}
+
+.faq .toggler {
+    font-size: 22px;
+	font-weight: bold;
+	border-color: #239de8;	
+}
+
+/*================================================== */
+
+
+/*================================================== */
+
+/* Toggle - FAQRED
+================================================== */
+
+.faqred .single_toggle {
+  width: 100%;
+}
+
+.faqred span.toggle_icon {
+  background: none !important;
+}
+
+.faqred .activeTitle span.toggle_icon, .faqred .activeTitle .toggle_icon .hor_icon {
+  background: none !important;
+}
+
+.faqred .toggle_icon:before {
+    font-family: 'entypo-fontello';   
+    content:'\e816';    
+    position: absolute;
+    font-size: 20px;
+    top:70%;
+    transform: translateY(-50%);
+    left: 0px;
+    line-height: 0;
+    color:#d73733;
+}
+
+.faqred .activeTitle span.toggle_icon:before, .faqred .activeTitle .toggle_icon .hor_icon:before {
+    font-family: 'entypo-fontello';   
+    content:'\e819';    
+    position: absolute;
+    font-size: 20px;
+    top:70%;
+    transform: translateY(-50%);
+    left: 0px;
+    line-height: 0;
+    color:#d73733;
+}
+
+.main_color .faqred .toggle_content {
+background: #ffffff;
+  }
+
+.faqred .toggle_content {
+    border-bottom-width: 0px;
+}
+
+.faqred .toggler {
+    font-size: 20px;
+	font-weight: bold;
+	border-color: #239de8;	
+}
+
+/*================================================== */
+
+
+.image-overlay {
+ visibility: hidden;
+ }
+
+
+
+/* =============== Tables ===================== */
+
+table, td {
+font-size: 18px;
+}
+
+@media only screen and (max-width: 767px)
+{
+	.responsive td { font-size: 17px;}
+}
+
+td {
+border:0px;
+}
+
+tr th:first-child, tr td:first-child{
+	border-left-width: 0px;
+}
+
+tr:first-child th, tr:first-child td{
+	border-top-width: 0px;
+}
+
+tr td:last-child {
+  border-left-width: 0px;
+}
+
+.main_color tr:nth-child(odd) {
+background: #ffffff !important;
+}
+
+.main_color tr:nth-child(even) {
+  color: inherit;
+}
+
+tfoot tr {
+border-bottom:0px;
+}
+
+tr {
+border-bottom-width:1px;
+border-style: solid;
+}
+
+/* =========================================== */
+
+img.alignleft {
+margin: 0px 30px 30px 0px;
+}
+
+
+.main_color a, .main_color strong a{
+color: #636363;
+}
+
+/* =============== Courses Toggle ============== 
+
+.page-id-4302 thead, .page-id-4725 thead {
+color: #d73733;
+}
+
+.page-id-4355 thead {
+color: #558d61;
+}
+
+.page-id-4709 thead {
+color: #5381a0;
+}
+
+.page-id-4302 thead tr, .page-id-4725 thead tr {
+border-bottom:1px solid #d73733 !important;
+}
+
+.page-id-4355 thead tr {
+border-bottom:1px solid #558d61 !important;
+}
+
+.page-id-4709 thead tr {
+border-bottom:1px solid #5381a0 !important;
+}
+
+.page-id-4302.main_color thead, .page-id-4725.main_color thead {
+border-color:#d73733 !important;
+}
+
+.page-id-4355.main_color thead {
+border-color:#558d61 !important;
+}
+
+.page-id-4709.main_color thead {
+border-color:#5381a0 !important;
+}
+*/
+
+/* ------------- Toggle --------------------*/
+.coursetitle {
+cursor: pointer;
+font-weight: 600;
+}
+
+.courseinfo {
+display: none;
+width: 100%;
+position: absolute;
+background: #f0f0f0;
+padding:12px 15px;
+margin: -15px -12px 0px 0px;
+border:1px solid #ccc;
+z-index: 9999999 !important;
+}
+
+
+.page-id-4302 span.coursetitle, .page-id-4725 span.coursetitle  {
+color: #d73733;
+}
+
+.page-id-4355 span.coursetitle {
+color: #558d61;
+}
+
+.page-id-4709 span.coursetitle {
+color: #5381a0;
+}
+
+/*---------------------------------------*/
+
+/* =========================================== */
+
+.syscustomers tr {
+border-bottom-width:0px !important;
+}
+
+.syscustomers table {
+border-collapse: separate;
+border-spacing: 15px 0px;
+background:none;
+}
+
+.syscustomers td{
+border-bottom:1px solid #e1e1e1;
+}
+
+.syscustomers tfoot td{
+border-bottom:0px;
+}
+
+/*--------------------------------------
+
+ 
+ /*--- Search page ---*/
+ .search-result-counter {
+  position: absolute;
+  right: 0;
+  left: auto !important;
+  top: 10px;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.2);
+  height: 44px;
+  line-height: 24px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 100px;
+  width: 44px;
+}
+
+#top .template-search.content .entry-content-wrapper {
+  padding-bottom: 40px;
+  padding-left: 55px;
+  font-size: 17px;
+  }
+  
+h2.post-title.entry-title {
+  margin-bottom:0px;
+  padding: 12px 0px;
+}
+
+.extra-mini-title {
+  margin-right: 0px !important;
+}
+
+.main_color input[type='submit'] {
+background-color: #636363;
+border-color: #636363;
+}
+
+.main_color input[type='submit']:hover {
+background-color: #444444;
+}
+
+#top .template-search.content .entry-content-wrapper {
+margin-right:55px;
+}
+
+article.page .date-container, .ajax_search_excerpt{
+display: none;
+}
+
+.ajax_search_title {
+  margin: 10px 10px 0px 0px;
+  }
+  
+.ajax_search_image {
+margin-left:10px;
+}
+
+
+/*----------------------------------------------*/
+
+.av-special-heading {
+  margin-top: 20px;
+  }
+  
+ .main_color blockquote {
+  border-color: #636363;
+  }
+  
+blockquote {
+  font-size: inherit;  
+  }
+
+.main_color blockquote {
+  color: inherit;
+}  
+
+.avia_transform .av_font_icon, .avia_transform .avia_start_delayed_animation.av_font_icon {
+opacity: 1 !important;
+-webkit-transform: scale(1) !important;
+-ms-transform: scale(1) !important;
+transform: scale(1) !important;
+-webkit-animation: none;
+-moz-animation: none;
+-msanimation: none;
+animation: none;
+}
+
+/* ======= Tabs ======== */
+
+@media only screen and (max-width: 767px)
+{
+.responsive #top .main_color .tabcontainer .active_tab {
+  background-color: #676767;
+  color: #ffffff;
+}
+}
+
+.js_active .tab {
+font-size: 17px;
+}
+
+.tabcontainer.tabp p {
+margin: 0px;
+}
+
+/*------------------------------*/
+
+img.iconthumi.alignright {
+margin-top:-10px !important;
+}
+
+img.iconthumi.alignleft, img.iconthumi.alignleft a, img.iconthumi.alignleft a:hover{
+margin: -10px 20px 20px 0px !important;
+}
+
+.title_icon {
+border:1px solid #636363 !important;
+padding:9px 12px;
+margin-top:-15px !important;
+}
+
+td.special_heading_table {
+padding: 0px !important;
+margin:0px !important;
+vertical-align:bottom;
+border-bottom:1px solid #ffffff !important;
+width:1%;
+white-space:nowrap;
+}
+
+td.special_heading_table h3{
+margin:0px 0px 0px 15px;
+}
+
+td.special_heading_table img.alignleft{
+  max-width: none;
+  bottom: -20px;
+  margin:-30px 15px 0px 0px;
+}  
+
+td.special_heading_table img.alignright{
+  max-width: none;
+  bottom: -20px;
+  margin:-30px 0px 0px 15px;
+}  
+
+table.trainning td{
+vertical-align:middle!important;
+}
+
+.av-share-box ul li a {
+  font-size: 17px;
+  }
+  
+.social p {
+  margin: 7px 0;
+}
+/* ----------- Home Page ------------- */
+
+@media only screen and (max-width: 767px)
+{
+.responsive .hideonmobile {
+display:none;
+}
+}
+
+.page-id-3525 div .av_one_half {
+  margin-left: 5%;
+  width: 45%;
+}
+
+.page-id-3525 div .av_one_half.first {
+  width: 50%;
+  margin-left:0% !important;
+}
+
+
+div.event p{
+margin-top:10px;
+}
+
+/*----------------------------------*/
+
+.page-id-7 .hideonobout, .page-id-67 .hideonobout  {
+display:none;
+}
+
+img.coursesimg.alignleft {
+margin:0px 30px 20px 0px !important;
+}
+
+.bigper {
+float:right;
+font-size:48px;
+font-weight:500;
+margin:-10px 0px 0px 15px;
+}
+
+.midper {
+font-size:38px !important;
+}
+
+
+hr.greenline {
+margin: 3px 0px 8px 0px;
+border-color:#dbe7e3;
+}
+
+hr.redline {
+margin: 3px 0px 8px 0px;
+border-color:#f6cece;
+}
+
+.avia-image-container.avia-align-center.gislogos {
+margin-bottom:0px;
+}
+
+.enalignleft {
+text-align:left;
+}
+
+/*========== Progress Bar =========*/
+
+.avia-progress-bar .progressbar-title-wrap {
+  bottom:0px;
+  left: 3px;
+  color: white;
+  background: none;
+  padding: 1px 10px 2px 10px;
+  border-radius: 3px;
+}
+
+/*----------------------------------*/
+
+.template-page .entry-content-wrapper h2 {
+  text-transform: none;
+}
+  
+.english_page {
+text-align:left;
+direction:ltr;
+}
+
+.avia-button-wrap.avia-button-left {
+float:left;
+text-align: left;
+}
+
+.avia-button-left .avia_button_icon.avia_button_icon_left {
+right:3px;
+}
+
+.pdf.avia-button-left .avia_button_icon.avia_button_icon_left {
+padding:3px;
+}
+
+.page-id-5289 div .av_one_half {
+  width: 50%;
+  margin-left:0% !important;
+}
+
+.page-id-5289 div .av_one_half.first {
+  margin-right: 5%;
+  width: 45%;
+}
+
+.english_page h4.av-special-heading-tag{
+  margin-right: 5px;
+  float: left;
+}
+
+#contactus img.alignleft {
+margin-right:40px;
+}
+
+#contactus img.alignleft.lastimg {
+margin-right:0px !important;
+}
+
+.page-id-5289 #footer .widget, .page-id-5298 #footer .widget, .page-id-5300 #footer .widget, .page-id-5302 #footer .widget, .page-id-5304 #footer .widget, .page-id-5306 #footer .widget, .page-id-5308 #footer .widget, .page-id-5310 #footer .widget, .page-id-5336 #footer .widget, .page-id-5339 #footer .widget, .page-id-5341 #footer .widget, .page-id-13669 #footer .widget, .page-id-5343 #footer .widget {
+text-align:left;
+direction:ltr;
+}
+
+/*======Ajax events calendar plugin=============*/
+
+#top select {
+  display: inline-block;
+  margin: -2px 2px;
+  padding:10px;
+}
+
+#top select, #top .entry-content-wrapper select {
+  background-position: -8px center;
+}
+
+.fc-content tr td:last-child {
+  border-left-width: 1px;
+}
+
+td.fc-header-right, td.fc-header-left, td.fc-header-center {
+  border-width: 0px !important;
+}
+
+.fc-content tr th:first-child, .fc-content tr td:first-child{
+	border-left-width: 1px;
+}
+
+.fc-content tr:first-child td{
+	border-top-width: 1px;
+}
+
+.fc-content tfoot tr {
+border-bottom:1px;
+}
+
+.fc-event-title {
+font-size:17px;
+}
+
+.fc-header-right {
+display:none;
+}
+
+.fc-header-title {
+float:right;
+margin-top:-20px;
+}
+
+.fc-state-highlight {
+  background: #efefef !important;
+  }
+  
+#aec-filter {
+	font-size:14px !important;
+	padding: 10px 0 40px 0 !important;
+  }
+
+#aec-calendar {
+	clear:both !important;
+  }
+  
+.fc-rtl .fc-event {
+text-align:left !important;
+}
+
+#aec-modal .duration  {
+display:none;
+}
+
+
+/*============= GIS MAIN ===================*/
+.greenborder {
+background: #f7f7f7;
+border-bottom: 3px solid #558d61 !important;
+}
+
+.thirdsmallmargin .av_one_third {
+  margin-left: 3%;
+  width: 31.333333333333332%;
+}
+
+.thirdsmallmargin .av_one_third.first {
+  width: 31.333333333333332%;
+  margin-left:0% !important;
+}
+
+.h2small  h2{
+padding: 5px 0px !important;
+margin: 5px 0px !important;
+font-size: 26px !important;
+}
+
+.psamllmargin p {
+margin-top:5px !important;
+margin-bottom:5px !important;
+}
+
+.esrilogomain img{
+padding: 10px 20px;
+}
+
+.h2nopad h2{
+padding: 0px !important;
+}
+
+/*------------------------------*/
+
+.wp-caption-text {
+  font-size: 17px;
+  font-style: normal;
+  font-family: inherit;
+}
+
+.page-id-6172 div .av_two_third, .page-id-6241 div .av_two_third, .page-id-8780 div .av_two_third  {
+  margin-left: 4%;
+  width: 66.66666666666666%;
+}
+
+img.resources.alignleft, img.resources.alignleft a, img.resources.alignleft a:hover {
+    margin: 0px 30px 30px 0px !important;
+}
+
+div.downloads p {
+margin-top:5px;
+margin-bottom:5px;
+}
+
+/*------------- SW 2016 ------------------*/
+
+li.ilnomarg {
+margin-bottom:0px !important;
+padding:1px 0px !important;
+}
+
+.avia-button.avia-size-medium {
+padding-left:12px !important;
+}
+
+.page-id-6380 #promotracks .column-top-margin, .page-id-6380 #promoinfo .column-top-margin, .page-id-6431 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+#promotracks .single_toggle {
+  width: 100% !important;
+ }
+ 
+#promotracks .av-seperator-icon {
+    font-size: 20px !important;
+}
+
+img.linked.alignleft, img.linked.alignleft a, img.linked.alignleft a:hover {
+    margin: 0px 30px 30px 0px !important;
+}
+
+.page-id-6431#top .main_color .tabcontainer .tab.active_tab {
+    color: #d73733;
+	}
+	
+.page-id-6431#top .main_color .tabcontainer .tab {
+    color: #d73733;
+	}
+
+.page-id-6431#top .main_color .tabcontainer .tab:hover {
+    color: #d73733 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-6431#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-6431#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-6431 div .main_color .tabcontainer .active_tab_content, .page-id-6431 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.bigwhite p{
+font-size:90px !important;
+color:#ffffff !important;
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .bigwhite p{
+    font-size: 42px !important;
+    line-height: 44px;
+}
+}
+
+#top .av-subnav-menu > li#menu-item-6805 > a{padding:4px 20px; font-weight: bold; color:#d73733; background: transparent; border:3px solid #d73733;}
+#top .av-subnav-menu > li#menu-item-6805 > a:hover {color:#d73733 !important; background: #f0f0f0 !important; border:3px solid #d73733;}
+
+.page-id-6431#top .av-subnav-menu > li > a {
+background: transparent;
+}
+
+@media only screen and (min-width: 767px)
+{
+.hideondesktop {
+display:none;
+}
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .hideondesktop {
+display:inherit;
+}
+}
+
+
+.page-id-6431#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-6431#top .sticky_placeholder { height: 86px;}
+.page-id-6431#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg.jpg) repeat left !important;}
+.page-id-6431#top .av-subnav-menu > li > a:hover, .page-id-6431#top  .av-subnav-menu li.current_page_item a, .page-id-6431#top .av-subnav-menu li.current-menu-parent  a {color:#d73733!important; background:transparent !important;}
+.page-id-6431#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-6512 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-6431#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-6431#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+
+.page-id-6431 .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    border-color: inherit;
+}
+
+.page-id-6431 .av_font_icon.av-icon-style-border .av-icon-char {
+    padding: 15px !important;
+}
+
+.page-id-6431#top  .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    color: #636363;
+}
+
+.page-id-6431 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+}
+
+
+/*------------- GIS 2015 ------------------*/
+
+.page-id-3731 #promotracks .column-top-margin, .page-id-3731 #promoinfo .column-top-margin, .page-id-7322 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+.page-id-3731 .avia-button-left .avia_button_icon.avia_button_icon_left, .page-id-7322 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+    font-size: 17px;
+}
+
+.page-id-7322#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-7322#top .sticky_placeholder { height: 86px;}
+.page-id-7322#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg1.jpg) repeat left !important;}
+.page-id-7322#top .av-subnav-menu > li > a:hover, .page-id-7322#top  .av-subnav-menu li.current_page_item a, .page-id-7322#top .av-subnav-menu li.current-menu-parent  a {color:#558d61!important; background:transparent !important;}
+.page-id-7322#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-7707 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-7322#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-7322#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+#top .av-subnav-menu > li#menu-item-7708 > a{padding:4px 20px; font-weight: bold; color:#558d61; background: transparent; border:3px solid #558d61;}
+#top .av-subnav-menu > li#menu-item-7708 > a:hover {color:#558d61 !important; background: #f0f0f0 !important; border:3px solid #558d61;}
+
+.page-id-7322#top .main_color .tabcontainer .tab.active_tab {
+    color: #558d61;
+	}
+	
+.page-id-7322#top .main_color .tabcontainer .tab {
+    color: #558d61;
+	}
+
+.page-id-7322#top .main_color .tabcontainer .tab:hover {
+    color: #558d61 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-7322#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-7322#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-7322 div .main_color .tabcontainer .active_tab_content, .page-id-7322 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.main_color .avia-content-slider .slide-image {
+background: transparent;
+}
+
+.page-id-7322 .main_color blockquote {
+    border-color: #558d61 !important;
+}
+
+
+/*----------- Countdown Counter TIMER SW AND GIS -------------*/
+
+.av-countdown-active.av-countdown-timer {
+    direction: ltr !important; 
+}
+
+.av-countdown-cell-inner {
+    padding: 9px;
+	}
+
+.page-id-6431 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-12411 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-17245 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-23793 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-28690 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-48357 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-48679 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-77111 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-48465 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time
+ {
+color:#000000;
+}
+
+.page-id-6431 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-12411 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-17245 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-23793 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-28690 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-48357 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-48679 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-77111 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-48465 .main_color .av-default-style .av-countdown-cell-inner
+{
+    background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg.jpg) repeat left !important;
+    color: #000000;
+}
+
+.page-id-7322 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-12979 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-16278 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-15196 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-28756 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time,
+.page-id-48411 .main_color .av-default-style .av-countdown-cell-inner .av-countdown-time
+{
+color:#270eab;
+}
+
+.page-id-7322 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-12979 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-16278 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-15196 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-28756 .main_color .av-default-style .av-countdown-cell-inner,
+.page-id-48411 .main_color .av-default-style .av-countdown-cell-inner
+{
+    background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg1.jpg) repeat left !important;
+    color: #270eab;
+}
+
+/*-------------- SW Products ----------------*/
+
+.sw_products td {
+    vertical-align: top;
+	padding-bottom: 25px;
+	}
+.sw_products td > img {
+	margin-top: 20px;
+	}
+
+.sw_products td > p {
+    margin: 15px 0;
+}
+
+/*============ Data Analytics ===========*/
+
+/*-------Submenu----------*/
+
+.page-id-10511#top .av-subnav-menu > li > a ,
+.page-id-10640#top .av-subnav-menu > li > a,
+.page-id-10650#top .av-subnav-menu > li > a,
+.page-id-10707#top .av-subnav-menu > li > a,
+.page-id-10909#top .av-subnav-menu > li > a,
+.page-id-11014#top .av-subnav-menu > li > a,
+.page-id-11052#top .av-subnav-menu > li > a,
+.page-id-11075#top .av-subnav-menu > li > a,
+.page-id-11162#top .av-subnav-menu > li > a {
+  background: #5381a0;
+}
+
+#top .av-subnav-menu > li#menu-item-11142> a  {
+  background: #db5f23;
+}
+#top .av-subnav-menu > li#menu-item-12313> a  {
+  background: #d73733;
+}
+
+/*---------------------------------*/
+
+/*------------- SW 2017 ------------------*/
+
+li.ilnomarg {
+margin-bottom:0px !important;
+padding:1px 0px !important;
+}
+
+.avia-button.avia-size-medium {
+padding-left:12px !important;
+}
+
+#promotracks .single_toggle {
+  width: 100% !important;
+ }
+ 
+#promotracks .av-seperator-icon {
+    font-size: 20px !important;
+}
+
+img.linked.alignleft, img.linked.alignleft a, img.linked.alignleft a:hover {
+    margin: 0px 30px 30px 0px !important;
+}
+
+.page-id-12411#top .main_color .tabcontainer .tab.active_tab {
+    color: #d73733;
+	}
+	
+.page-id-12411#top .main_color .tabcontainer .tab {
+    color: #d73733;
+	}
+
+.page-id-12411#top .main_color .tabcontainer .tab:hover {
+    color: #d73733 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-12411#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-12411#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-12411 div .main_color .tabcontainer .active_tab_content, .page-id-12411 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.bigwhite p{
+font-size:90px !important;
+color:#ffffff !important;
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .bigwhite p{
+    font-size: 42px !important;
+    line-height: 44px;
+}
+}
+
+#top .av-subnav-menu > li#menu-item-12422 > a{padding:4px 20px; font-weight: bold; color:#d73733; background: transparent; border:3px solid #d73733;}
+#top .av-subnav-menu > li#menu-item-12422 > a:hover {color:#d73733 !important; background: #f0f0f0 !important; border:3px solid #d73733;}
+
+.page-id-12411#top .av-subnav-menu > li > a {
+background: transparent;
+}
+
+@media only screen and (min-width: 767px)
+{
+.hideondesktop {
+display:none;
+}
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .hideondesktop {
+display:inherit;
+}
+}
+
+.page-id-12411#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-12411#top .sticky_placeholder { height: 86px;}
+.page-id-12411#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg.jpg) repeat left !important;}
+.page-id-12411#top .av-subnav-menu > li > a:hover, .page-id-12411#top  .av-subnav-menu li.current_page_item a, .page-id-12411#top .av-subnav-menu li.current-menu-parent  a {color:#d73733!important; background:transparent !important;}
+.page-id-12411#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-12421 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-12411#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-12411#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+
+.page-id-12411 .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    border-color: inherit;
+}
+
+.page-id-12411 .av_font_icon.av-icon-style-border .av-icon-char {
+    padding: 15px !important;
+}
+
+.page-id-12411#top  .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    color: #636363;
+}
+
+.page-id-12411 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+}
+
+/*------------- SW 2017 - Cubes Menu ------------------*/
+
+#cubesmenu img  {
+padding-top: 30px;
+}
+
+#cubesmenu div .av_one_fourth {
+    margin-left: 2%;
+    margin-right: 2%;	
+    width: 21%;
+}
+
+#cubesmenu .container_wrap .avia-builder-el-first {
+    margin-left: 5%;
+	margin-right: 0%;
+    width: 20%;
+}
+
+
+/*------------- GIS CONF 2016 ------------------*/
+
+.page-id-12979 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+.page-id-12979 .avia-button-left .avia_button_icon.avia_button_icon_left, .page-id-12979 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+    font-size: 17px;
+}
+
+.page-id-12979#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-12979#top .sticky_placeholder { height: 86px;}
+.page-id-12979#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg1.jpg) repeat left !important;}
+.page-id-12979#top .av-subnav-menu > li > a:hover, .page-id-12979#top  .av-subnav-menu li.current_page_item a, .page-id-12979#top .av-subnav-menu li.current-menu-parent  a {color:#558d61!important; background:transparent !important;}
+.page-id-12979#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-13311 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-12979#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-12979#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+#top .av-subnav-menu > li#menu-item-13312 > a{padding:4px 20px; font-weight: bold; color:#558d61; background: transparent; border:3px solid #558d61;}
+#top .av-subnav-menu > li#menu-item-13312 > a:hover {color:#558d61 !important; background: #f0f0f0 !important; border:3px solid #558d61;}
+
+.page-id-12979#top .main_color .tabcontainer .tab.active_tab {
+    color: #558d61;
+	}
+	
+.page-id-12979#top .main_color .tabcontainer .tab {
+    color: #558d61;
+	}
+
+.page-id-12979#top .main_color .tabcontainer .tab:hover {
+    color: #558d61 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-12979#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-12979#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-12979 div .main_color .tabcontainer .active_tab_content, .page-id-12979 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.main_color .avia-content-slider .slide-image {
+background: transparent;
+}
+
+.page-id-12979 .main_color blockquote {
+    border-color: #558d61 !important;
+}
+
+
+
+/*---------------------------------*/
+
+/*------------- SW 2017 CONF ------------------*/
+
+li.ilnomarg {
+margin-bottom:0px !important;
+padding:1px 0px !important;
+}
+
+.avia-button.avia-size-medium {
+padding-left:12px !important;
+}
+
+#promotracks .single_toggle {
+  width: 100% !important;
+ }
+ 
+#promotracks .av-seperator-icon {
+    font-size: 20px !important;
+}
+
+img.linked.alignleft, img.linked.alignleft a, img.linked.alignleft a:hover {
+    margin: 0px 30px 30px 0px !important;
+}
+
+.page-id-17245#top .main_color .tabcontainer .tab.active_tab {
+    color: #d73733;
+	}
+	
+.page-id-17245#top .main_color .tabcontainer .tab {
+    color: #d73733;
+	}
+
+.page-id-17245#top .main_color .tabcontainer .tab:hover {
+    color: #d73733 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-17245#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-17245#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-17245 div .main_color .tabcontainer .active_tab_content, .page-id-17245 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.bigwhite p{
+font-size:90px !important;
+color:#ffffff !important;
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .bigwhite p{
+    font-size: 42px !important;
+    line-height: 44px;
+}
+}
+
+#top .av-subnav-menu > li#menu-item-17908 > a{padding:4px 20px; font-weight: bold; color:#d73733; background: transparent; border:3px solid #d73733;}
+#top .av-subnav-menu > li#menu-item-17908 > a:hover {color:#d73733 !important; background: #f0f0f0 !important; border:3px solid #d73733;}
+
+.page-id-17245#top .av-subnav-menu > li > a {
+background: transparent;
+}
+
+@media only screen and (min-width: 767px)
+{
+.hideondesktop {
+display:none;
+}
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .hideondesktop {
+display:inherit;
+}
+}
+
+.page-id-17245#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-17245#top .sticky_placeholder { height: 86px;}
+.page-id-17245#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg.jpg) repeat left !important;}
+.page-id-17245#top .av-subnav-menu > li > a:hover, .page-id-17245#top  .av-subnav-menu li.current_page_item a, .page-id-17245#top .av-subnav-menu li.current-menu-parent  a {color:#d73733!important; background:transparent !important;}
+.page-id-17245#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-17907 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-17245#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-17245#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+
+.page-id-17245 .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    border-color: inherit;
+}
+
+.page-id-17245 .av_font_icon.av-icon-style-border .av-icon-char {
+    padding: 15px !important;
+}
+
+.page-id-17245#top  .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    color: #636363;
+}
+
+.page-id-17245 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+
+}/*-------------END OF SW 2017 ------------------*/
+
+
+/*------------- GIS CONF 2017 ------------------*/
+
+.page-id-16278 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+.page-id-16278 .avia-button-left .avia_button_icon.avia_button_icon_left, .page-id-16278 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+    font-size: 17px;
+}
+
+.page-id-16278#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-16278#top .sticky_placeholder { height: 86px;}
+.page-id-16278#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg1.jpg) repeat left !important;}
+.page-id-16278#top .av-subnav-menu > li > a:hover, .page-id-16278#top  .av-subnav-menu li.current_page_item a, .page-id-16278#top .av-subnav-menu li.current-menu-parent  a {color:#558d61!important; background:transparent !important;}
+.page-id-16278#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-17919 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-16278#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-16278#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+#top .av-subnav-menu > li#menu-item-17920 > a{padding:4px 20px; font-weight: bold; color:#558d61; background: transparent; border:3px solid #558d61;}
+#top .av-subnav-menu > li#menu-item-17920 > a:hover {color:#558d61 !important; background: #f0f0f0 !important; border:3px solid #558d61;}
+
+.page-id-16278#top .main_color .tabcontainer .tab.active_tab {
+    color: #558d61;
+	}
+	
+.page-id-16278#top .main_color .tabcontainer .tab {
+    color: #558d61;
+	}
+
+.page-id-16278#top .main_color .tabcontainer .tab:hover {
+    color: #558d61 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-16278#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-16278#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-16278 div .main_color .tabcontainer .active_tab_content, .page-id-16278 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.main_color .avia-content-slider .slide-image {
+background: transparent;
+}
+
+.page-id-16278 .main_color blockquote {
+    border-color: #558d61 !important;
+}
+
+
+
+/*------------END OF GIS 2017 CONF---------------------*/
+
+/*
+	Webinside styles - multilang
+*/
+#top header.av_header_transparency.header-scrolled .header_bg {
+    background: #fff;
+    opacity: 1;
+}
+.topheader{
+	height: 188px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-top: 20px;
+}
+.topheader.blog-archive{
+	min-height: 469px;
+	background-position: center top !important;
+}
+.topheader.blog-archive .container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	height: 100%;
+}
+.topheader.blog-archive p#breadcrumbs,
+.topheader.blog-archive .top-title{
+	margin-top: auto;
+}
+.topheader.blog-archive .hide-m + p#breadcrumbs{
+	margin-top: 15px;
+}
+p#breadcrumbs strong{
+	display: inline-block;
+}
+#top #wrap_all .all_colors .topheader.blog-archive h1.top-title{
+	position: relative;
+	padding-bottom: 0.1em;
+	margin-bottom: 0.3em;
+	color: #fff;
+	font-size: 55px;
+	padding-top: 60px;
+}
+.topheader.blog-archive .top-title:after{
+	content: " ";
+	width: 390px;
+	height: 1px;
+	background-color: #FFF;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.topheader.blog-archive p,
+.topheader.blog-archive p a,
+.topheader.blog-archive p a:visited{
+	color: #fff;
+}
+[dir="rtl"] .topheader.blog-archive .top-title:after{
+	left: auto;
+	right: 0;
+}
+.topheader p{
+	margin: 0;
+}
+.topheader p#breadcrumbs{
+	margin-bottom: 35px;
+}
+#top #wrap_all .all_colors h1.single-title{
+	color: #434343;
+	font-size: 55px;
+	font-weight: 400;
+	position: relative;
+	padding-bottom: 0.1em;
+	margin-bottom: 0.3em;
+}
+.user-meta .top-row {
+    margin-bottom: 5px;
+}
+#top #wrap_all .all_colors h1.single-title:after{
+	content: " ";
+	width: 131px;
+	height: 1px;
+	background-color: #434343;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+[dir="rtl"] #top #wrap_all .all_colors h1.single-title:after{
+	right: 0;
+	left: auto;
+}
+.author-meta, 
+.cta-box{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.author-meta > div{
+	display: inline-block;
+	line-height: 1;
+}
+.author-meta .name{
+    font-size: 18px;
+    font-weight: 700;
+}
+.author-meta .date{
+    font-size: 16px;
+}
+.user_avatar img{
+	width: 45px;
+	height: 45px;
+	border-radius: 99em;
+	margin-right: 30px;
+}
+[dir="rtl"] .user_avatar img{
+	margin-left: 15px;
+	margin-right: auto;
+}
+.post-meta{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	margin-bottom: 35px;
+}
+.post-category-link a{
+	padding: 10px 20px;
+	min-width: 150px;
+	height: 50px;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	font-size: 18px;
+}
+.post-category-link a:hover{
+	color: #fff;
+	text-decoration: none;
+}
+.post_info{
+	margin-left: auto;
+}
+.post_info > div{
+	display: inline-block;
+}
+[dir="rtl"] .post_info{
+	margin-right: auto;
+	margin-left: 0;
+}
+.post-comment-count a{
+	padding: 10px 20px;
+	display: inline-block;
+}
+.post-comment-count a:hover{
+	text-decoration: none;
+}
+.container.template-single-blog .av-content-small.units{
+    width: 70%;	
+}
+.container.template-single-blog > *{
+	border: none !important;
+}
+.post-excerpt{
+	color: #434343;
+	font-size: 24px;
+	font-weight: 700; 
+}
+.cta-box div.text span{
+	color: #444;
+	font-size: 24px;
+	font-weight: 400;
+}
+.cta-box div.btn{
+	margin-left: auto;
+	text-align: center;
+}
+[dir="rtl"] .cta-box div.btn{
+	margin-right: auto;
+	margin-left: 0;
+}
+.cta-box{
+	min-height: 123px;
+	padding: 20px 0;
+}
+.cta-box div.btn a{
+	color: #fff;
+	font-size: 24px;
+	font-weight: 400;
+	padding: 10px 20px;
+	width: 230px;
+	height: 50px;
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 400;
+}
+.cta-box div.btn a:hover{
+	text-decoration: none;
+}
+.single-blog-post #top #s{
+	padding: 16px 10px 11px 47px;
+}
+
+#top .widget_blogsearch_widget input[type="submit"]{
+	background: none;
+	color: #434343;
+}
+#top .widget_blogsearch_widget input#s{
+	font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #434343;
+	height: 37px;
+	border: 1px solid #efefef;
+	background-color: #efefef;
+	font-size: 15px;
+    font-weight: 400;
+}
+#top .widget_blogsearch_widget ::-webkit-input-placeholder { /* Chrome */
+  color: #9c9c9c;
+  font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#top .widget_blogsearch_widget :-ms-input-placeholder { /* IE 10+ */
+  color: #9c9c9c;
+  font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#top .widget_blogsearch_widget ::-moz-placeholder { /* Firefox 19+ */
+  color: #9c9c9c;
+  opacity: 1;
+  font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#top .widget_blogsearch_widget :-moz-placeholder { /* Firefox 4 - 18 */
+  color: #9c9c9c;
+  opacity: 1;
+  font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+input, textarea, select, button, #top .input-text, #top input[type="text"], #top input[type="input"], #top input[type="password"], #top input[type="email"], #top input[type="number"], #top input[type="url"], #top input[type="tel"], #top input[type="search"], #top textarea, #top select {
+  font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+.widget_dynamicmailpoet_widget{
+	text-align: center;
+}
+.widget_newsletter_wrapper{
+	padding: 24px 29px 30px 29px;
+}
+.widget_ctapopup_widget{
+	padding: 15px 29px 15px 29px;
+}
+.widget_newsletter_wrapper,
+.widget_ctapopup_widget{
+	border: 1px solid #B7B7B7;
+}
+.widget_dynamicmailpoet_widget form{
+	position: relative;
+	margin-bottom: 0 !important;
+}
+.widget_dynamicmailpoet_widget form input,
+#top .widget_dynamicmailpoet_widget input[type="email"]{
+  font-family: 'NarkisBlockMFW-Thin', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;	
+  height: 37px;
+  font-size: 15px;
+  margin: 0;
+}
+.widget_dynamicmailpoet_widget .mailpoet_submit{
+	-webkit-box-shadow: 2.5px 3.2px 7.2px 0.8px rgba(22, 26, 29, 0.17);
+	box-shadow: 2.5px 3.2px 7.2px 0.8px rgba(22, 26, 29, 0.17);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.widget_newsletter_title,
+#top #wrap_all .all_colors h3.widget_newsletter_title {
+    color: #434343;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+.widget_dynamicmailpoet_widget .cat-name{
+    font-size: 17px;
+    font-weight: 400;
+}
+.widget_dynamicmailpoet_widget .widget-txt{
+	color: #434343;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 1.3;
+}
+.widget_dynamicmailpoet_widget hr{
+	margin-bottom: 14px;
+	margin-top: 13px;
+}
+.widget_dynamicmailpoet_widget .mailpoet_paragraph{
+	margin: 0;
+}
+.share-box.top{
+	margin-bottom: 30px;
+}
+.share-box:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+.share-box .av-share-box{
+	margin-bottom: 0;
+}
+.share-box .av-share-link-description{
+	display: none;
+}
+#breadcrumbs a{
+	color: #3B3B3B;
+}
+body.blog #breadcrumbs a{
+	color: #fff;
+}
+.wi_related_posts{
+	margin-top: 30px;
+}
+#top .wi_related_posts .related_title {
+    color: #444;
+    font-size: 24px;
+    font-weight: 700;
+}
+.grid_wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+	margin: 0 -10px;
+}
+.grid_wrap .one-third {
+    width: 33.333%;
+}
+.grid_wrap .one-fourth{
+	width: 25%;
+}
+.grid_wrap div[class^="one-"] .post-item {
+    margin: 0px 10px 20px 10px;
+}
+.grid_wrap div[class^="one-"] .post-item .post-image{
+	position: relative;
+	height: 0;
+	padding-bottom: 49%;
+}
+/*
+.grid_wrap div[class^="one-"] .post-item .post-image img{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+	right: 0;
+}
+*/
+/*
+.grid_wrap.blogdisplay div[class^="one-"]:nth-child(2n+5) .post-item{
+	margin-top: -10%;
+}
+*/
+.alm-listing.grid_wrap{
+	margin: 0 -10px;
+}
+.grid_wrap.blogdisplay div[class^="one-"]:nth-child(even) .post-item .post-image,
+.grid_wrap.alm-listing div[class^="one-"]:nth-child(even) .post-item .post-image{
+    padding-bottom: 59%;	
+}
+.grid_wrap.blogdisplay div[class^="one-"]:nth-child(even) .post-item .post-image img,
+.grid_wrap.alm-listing div[class^="one-"]:nth-child(even) .post-item .post-image img{
+	max-width: inherit;
+    width: 120%;
+    position: absolute;
+    left: -10%;
+}
+[dir="rtl"] .grid_wrap.blogdisplay div[class^="one-"]:nth-child(even) .post-item .post-image img,
+[dir="rtl"] .grid_wrap.alm-listing div[class^="one-"]:nth-child(even) .post-item .post-image img{
+    left: auto;
+    right: -10%;
+}
+.grid_wrap .post-item{
+	border-bottom: 3px solid;
+	-webkit-box-shadow: 0 4px 15px 1px rgba(22, 26, 29, 0.15);
+	box-shadow: 0 4px 15px 1px rgba(22, 26, 29, 0.15);
+}
+.grid_wrap .post-item > a{
+	background-color: #FFF;
+	display: block;
+	overflow: hidden;
+}
+.grid_wrap .post-item .content_wrap{
+	padding: 15px;
+	margin-top: 10px;
+}
+#top #wrap_all .all_colors .grid_wrap .post-item .content_wrap h3.post-ttl {
+    color: #434343;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+.grid_wrap .post-item .content_wrap .post-cat{
+	font-size: 14px;
+	font-weight: 400;
+	margin-top: 0;
+}
+.grid_wrap .post-item .author-meta .name{
+    font-size: 14px;
+}
+.grid_wrap .post-item .author-meta .date{
+    font-size: 13px;
+}
+.grid_wrap .post-item a:hover{
+	text-decoration: none;
+}
+.comment-entry.post-entry{
+	margin-top: 51px;
+    width: 100%;
+    max-width: 383px;
+}
+.wi-comment_meta_container {
+    color: #fff;
+	min-height: 50px;
+	padding: 15px;
+	margin-bottom: 29px;
+}
+#top .main_color .wi-comment-entry div#respond.comment-respond input#submit {
+    width: 100%;
+    background: none;
+    font-size: 16px;
+	font-family: inherit;	
+}
+
+.topheader.blog-archive .container > *:not(#breadcrumbs) {
+    max-width: 540px;
+    width: 100%;
+    font-size: 22px;
+}
+.topheader .widget_blogsearch_widget{
+	padding-top: 20px;
+    font-size: 18px !important;
+    max-width: 225px !important;
+}
+.author-bio{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	color: #434343;
+	font-size: 24px;
+	font-weight: 400;
+}
+.author-bio .user_avatar{
+	max-width: 17%;
+}
+.author-bio .user-meta{
+	width: 100%;
+    max-width: 83%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.author-bio .user-meta p{
+	margin: 0;
+}
+.author-bio .user_avatar img{
+	width: auto;
+	height: auto;
+}
+.author-bio .author-desc{
+	width: 100%;
+}
+.author-bio .author-desc p{
+	width: 100%;
+	max-width: 500px;
+	font-size: 17px;
+    line-height: 1.3;
+}
+#top #wrap_all .all_colors .author-bio h1{
+	color: #434343;
+    font-size: 55px;
+    font-weight: 400;
+    display: inline-block;
+}
+#top #wrap_all .all_colors .author-bio .author-social-wrap{
+	display: inline-block;
+	font-size: 20px;
+	position: relative;
+	margin-right: 25px;
+}
+#top #wrap_all .all_colors .author-bio .author-social-wrap:before{
+	position: absolute;
+	width: 1px;
+	height: 34px;
+	background-color: #D6D6D4;
+	content: " ";
+	right: 0;
+	top: -7px;
+}
+.author-social-wrap a.twitter i:before,
+.author-social-wrap a.email i:before{
+	font-size: 1.1em;
+}
+.author-social-wrap a.linked i:before{
+    position: relative;
+    top: -.1em;
+}
+.author-social-wrap a.fb i:before{
+	font-size: 0.9em;
+	position: relative;
+    top: -0.1em;
+}
+#top #wrap_all .all_colors .author-bio .author-social-wrap a{
+	color: #b7b7b7;
+}
+#top #wrap_all .all_colors .author-bio .author-social-wrap a:hover{
+	text-decoration: none;
+	color: #636363;
+}
+.author-social-wrap a{
+	margin-right: 25px;
+}
+
+/*
+#top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a:after{
+	left: 0;
+}
+[dir="rtl"] #top #wrap_all .av_header_transparency .main_menu ul:first-child > li > a:after{
+	right: 0;
+	left: auto;
+}
+*/
+#catNav ul{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-line-pack: center;
+	    align-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+#catNav ul li a {
+    padding: 5px 25px;
+    border: 2px solid;
+/*     border-radius: 99em; */
+    font-size: 16px;
+    margin: 0 7px;
+    display: inherit;
+    font-weight: bold;
+    margin-top: -20px;
+}
+#catNav ul li a:hover,
+#catNav ul li a:focus{
+	text-decoration: none;
+}
+.text-center{
+	text-align: center;
+}
+
+.ajax-load-more-wrap.blue .alm-load-more-btn, .ajax-load-more-wrap.blue .alm-load-more-btn.done, .ajax-load-more-wrap.blue .alm-load-more-btn:hover{
+	background-color: transparent !important;
+	color: #434343;
+    font-size: 18px;
+    font-weight: 700;
+}
+body.author .content{
+	padding-top: 0;
+}
+.wi_related_posts .alm-btn-wrap .alm-load-more-btn{
+	background-color: #999;
+}
+.wi_related_posts .alm-btn-wrap .alm-load-more-btn:hover{
+	background-color: #939393;
+}
+.alm-btn-wrap .alm-load-more-btn.done{
+	display: none;
+}
+#top #wrap_all .av-social-link-whatsapp:hover a{
+	color: #fff;
+    background-color: #25D366;
+}
+.alm-masonry{
+	padding: 0 15px;
+    margin: 0 -15px;
+}
+body.single-mailpoet_page #main .topheader #breadcrumbs,
+body.single-mailpoet_page .post-meta,
+body.single-mailpoet_page .share-box,
+body.single-mailpoet_page .wi_related_posts,
+body.single-mailpoet_page .post-content,
+body#top.single-mailpoet_page #main .sidebar{
+	display: none;
+}
+body.single-mailpoet_page #main .topheader{
+	height: 175px;
+}
+body.single-mailpoet_page .container.template-single-blog .av-content-small.units{
+	width: 100%;
+	padding-left: 0;
+	padding-bottom: 140px;
+}
+@media (max-width: 1200px){
+	#main .container{
+		padding: 0 15px;
+	}
+}
+@media (max-width: 820px){
+	#catNav ul li a {
+	    font-size: 15px;
+	    padding: 5px 10px;
+	    margin: 8px;
+	    min-width: 70px;
+	    text-align: center;
+	}
+}
+@media (max-width: 767px){ /* Mobile Style */
+	.grid_wrap .one-third,
+	.grid_wrap .one-fourth {
+	    width: 100%;
+	}
+	.responsive #top .container .av-content-small{
+		padding-bottom: 0;
+	}
+	.responsive #top #main .sidebar.smartphones_sidebar_active{
+		padding-top: 0;
+	}
+}
+@media (max-width: 652px){
+	.topheader{
+		height: auto;
+		min-height: 98px;
+	}
+	#catNav ul{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+        margin-right: 0;
+	}
+	.topheader p#breadcrumbs {
+	    margin-bottom: 20px;
+	}
+}
+@media (max-width: 540px){
+	.post_info {
+	    width: 100%;
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	    -webkit-box-pack: justify;
+	        -ms-flex-pack: justify;
+	            justify-content: space-between;
+	}
+	.post-comment-count a{
+		padding: 10px 0;
+	}
+	 .cta-box{
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	 }
+	 .cta-box .text{
+		 margin-bottom: 20px;
+	 }
+	 .cta-box div.btn,
+	 [dir="rtl"] .cta-box div.btn{
+		 margin-left: auto;
+		 margin-right: auto;
+	 }
+	 #top #wrap_all .all_colors .author-bio .author-social-wrap{
+		 display: block;
+		 margin-right: 0;
+		 margin-left: 0;
+	 }
+	 #top #wrap_all .all_colors .author-bio .author-social-wrap a:last-child{
+		 margin-right: 0;
+		 margin-left: 0;
+	 }
+	 #top #wrap_all .all_colors .author-bio .author-social-wrap:before{
+		 display: none;
+	 }
+}
+/*-----------------------------------------*/
+/*--------Blog Posts Link Style------------*/
+
+.main_color div.post-content a { text-decoration: underline !important;}
+
+/*-----------------------------------------*/
+
+
+/*------------- GIS CONF 2018 ------------------*/
+
+.page-id-15196 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+.page-id-15196 .avia-button-left .avia_button_icon.avia_button_icon_left, .page-id-15196 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+    font-size: 17px;
+}
+
+.page-id-15196#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-15196#top .sticky_placeholder { height: 86px;}
+.page-id-15196#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg1.jpg) repeat left !important;}
+.page-id-15196#top .av-subnav-menu > li > a:hover, .page-id-15196#top  .av-subnav-menu li.current_page_item a, .page-id-15196#top .av-subnav-menu li.current-menu-parent  a {color:#558d61!important; background:transparent !important;}
+.page-id-15196#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-25090 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-15196#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-15196#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+#top .av-subnav-menu > li#menu-item-25092 > a{padding:4px 20px; font-weight: bold; color:#558d61; background: transparent; border:3px solid #558d61;}
+#top .av-subnav-menu > li#menu-item-25092 > a:hover {color:#558d61 !important; background: #f0f0f0 !important; border:3px solid #558d61;}
+
+.page-id-15196#top .main_color .tabcontainer .tab.active_tab {
+    color: #558d61;
+	}
+	
+.page-id-15196#top .main_color .tabcontainer .tab {
+    color: #558d61;
+	}
+
+.page-id-15196#top .main_color .tabcontainer .tab:hover {
+    color: #558d61 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-15196#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-15196#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-15196 div .main_color .tabcontainer .active_tab_content, .page-id-15196 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.main_color .avia-content-slider .slide-image {
+background: transparent;
+}
+
+.page-id-15196 .main_color blockquote {
+    border-color: #558d61 !important;
+}
+
+/*------------END OF GIS 2018 CONF---------------------*/
+
+
+/*------------- SW 2018 CONF ------------------*/
+
+li.ilnomarg {
+margin-bottom:0px !important;
+padding:1px 0px !important;
+}
+
+.avia-button.avia-size-medium {
+padding-left:12px !important;
+}
+
+#promotracks .single_toggle {
+  width: 100% !important;
+ }
+ 
+#promotracks .av-seperator-icon {
+    font-size: 20px !important;
+}
+
+img.linked.alignleft, img.linked.alignleft a, img.linked.alignleft a:hover {
+    margin: 0px 30px 30px 0px !important;
+}
+
+.page-id-23793#top .main_color .tabcontainer .tab.active_tab {
+    color: #d73733;
+	}
+	
+.page-id-23793#top .main_color .tabcontainer .tab {
+    color: #d73733;
+	}
+
+.page-id-23793#top .main_color .tabcontainer .tab:hover {
+    color: #d73733 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-23793#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-23793#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-23793 div .main_color .tabcontainer .active_tab_content, .page-id-23793 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.bigwhite p{
+font-size:90px !important;
+color:#ffffff !important;
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .bigwhite p{
+    font-size: 42px !important;
+    line-height: 44px;
+}
+}
+
+#top .av-subnav-menu > li#menu-item-25101 > a{padding:4px 20px; font-weight: bold; color:#d73733; background: transparent; border:3px solid #d73733;}
+#top .av-subnav-menu > li#menu-item-25101 > a:hover {color:#d73733 !important; background: #f0f0f0 !important; border:3px solid #d73733;}
+
+.page-id-23793#top .av-subnav-menu > li > a {
+background: transparent;
+}
+
+@media only screen and (min-width: 767px)
+{
+.hideondesktop {
+display:none;
+}
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .hideondesktop {
+display:inherit;
+}
+}
+
+.page-id-23793#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-23793#top .sticky_placeholder { height: 86px;}
+.page-id-23793#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg.jpg) repeat left !important;}
+.page-id-23793#top .av-subnav-menu > li > a:hover, .page-id-23793#top  .av-subnav-menu li.current_page_item a, .page-id-23793#top .av-subnav-menu li.current-menu-parent  a {color:#d73733!important; background:transparent !important;}
+.page-id-23793#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-25100 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-23793#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-23793#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+
+.page-id-23793 .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    border-color: inherit;
+}
+
+.page-id-23793 .av_font_icon.av-icon-style-border .av-icon-char {
+    padding: 15px !important;
+}
+
+.page-id-23793#top  .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    color: #636363;
+}
+
+.page-id-23793 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+
+}/*-------------END OF SW 2018 ------------------*/
+
+
+/*------------- SW 2019 CONF ------------------*/
+
+li.ilnomarg {
+margin-bottom:0px !important;
+padding:1px 0px !important;
+}
+
+.avia-button.avia-size-medium {
+padding-left:12px !important;
+}
+
+#promotracks .single_toggle {
+  width: 100% !important;
+ }
+ 
+#promotracks .av-seperator-icon {
+    font-size: 20px !important;
+}
+
+img.linked.alignleft, img.linked.alignleft a, img.linked.alignleft a:hover {
+    margin: 0px 30px 30px 0px !important;
+}
+
+.page-id-28690#top .main_color .tabcontainer .tab.active_tab {
+    color: #d73733;
+	}
+	
+.page-id-28690#top .main_color .tabcontainer .tab {
+    color: #d73733;
+	}
+
+.page-id-28690#top .main_color .tabcontainer .tab:hover {
+    color: #d73733 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-28690#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-28690#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-28690 div .main_color .tabcontainer .active_tab_content, .page-id-28690 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.bigwhite p{
+font-size:90px !important;
+color:#ffffff !important;
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .bigwhite p{
+    font-size: 42px !important;
+    line-height: 44px;
+}
+}
+
+#top .av-subnav-menu > li#menu-item-31360 > a{padding:4px 20px; font-weight: bold; color:#d73733; background: transparent; border:3px solid #d73733;}
+#top .av-subnav-menu > li#menu-item-31360 > a:hover {color:#d73733 !important; background: #f0f0f0 !important; border:3px solid #d73733;}
+
+.page-id-28690#top .av-subnav-menu > li > a {
+background: transparent;
+}
+
+@media only screen and (min-width: 767px)
+{
+.hideondesktop {
+display:none;
+}
+}
+
+@media only screen and (max-width: 767px)
+{
+.responsive .hideondesktop {
+display:inherit;
+}
+}
+
+.page-id-28690#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-28690#top .sticky_placeholder { height: 86px;}
+.page-id-28690#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/nav-bg.jpg) repeat left !important;}
+.page-id-28690#top .av-subnav-menu > li > a:hover, .page-id-28690#top  .av-subnav-menu li.current_page_item a, .page-id-28690#top .av-subnav-menu li.current-menu-parent  a {color:#d73733!important; background:transparent !important;}
+.page-id-28690#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-31359 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-28690#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-28690#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+
+.page-id-28690 .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    border-color: inherit;
+}
+
+.page-id-28690 .av_font_icon.av-icon-style-border .av-icon-char {
+    padding: 15px !important;
+}
+
+.page-id-28690#top  .main_color .av-no-color.av-icon-style-border a.av-icon-char {
+    color: #636363;
+}
+
+.page-id-28690 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+
+}
+/*-------------END OF SW conf 2019 ------------------*/
+
+/*------------------ Grid Row --------------------*/
+.gridrowpadding {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+/*------------------------------------------------*/
+
+/*------------- GIS CONF 2019 ------------------*/
+
+.page-id-28756 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+.page-id-28756 .avia-button-left .avia_button_icon.avia_button_icon_left, .page-id-28756 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+    font-size: 17px;
+}
+
+.page-id-28756#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-28756#top .sticky_placeholder { height: 86px;}
+.page-id-28756#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/BLUE-BG.jpg) repeat left !important;}
+.page-id-28756#top .av-subnav-menu > li > a:hover, .page-id-28756#top  .av-subnav-menu li.current_page_item a, .page-id-28756#top .av-subnav-menu li.current-menu-parent  a {color:#0e1577!important; background:transparent !important;}
+.page-id-28756#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-31790 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-28756#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-28756#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+#top .av-subnav-menu > li#menu-item-31789 > a{padding:4px 20px; font-weight: bold; color:#0e1577; background: transparent; border:3px solid #0e1577;}
+#top .av-subnav-menu > li#menu-item-31789 > a:hover {color:#0e1577 !important; background: #f0f0f0 !important; border:3px solid #0e1577;}
+
+.page-id-28756#top .main_color .tabcontainer .tab.active_tab {
+    color: #0e1577;
+	}
+	
+.page-id-28756#top .main_color .tabcontainer .tab {
+    color: #0e1577;
+	}
+
+.page-id-28756#top .main_color .tabcontainer .tab:hover {
+    color: #0e1577 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-28756#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-28756#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-28756 div .main_color .tabcontainer .active_tab_content, .page-id-28756 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.main_color .avia-content-slider .slide-image {
+background: transparent;
+}
+
+.page-id-28756 .main_color blockquote {
+    border-color: #0e1577 !important;
+}
+
+/*------------END OF GIS 2019 CONF---------------------*/
+
+/*------------- GIS CONF 2023 ------------------*/
+
+.page-id-77111 #main .column-top-margin {
+    margin-top: 20px !important;
+}
+
+.page-id-77111 .avia-button-left .avia_button_icon.avia_button_icon_left, .page-id-77111 .avia-button-left .avia_button_icon.avia_button_icon_left {
+    right: -5px;
+    font-size: 17px;
+}
+
+.page-id-77111#top .av-subnav-menu	  { margin-top:26px; }
+.page-id-77111#top .sticky_placeholder { height: 86px;}
+.page-id-77111#top .av-submenu-container	{ height:86px; background: url(https://www.systematics.co.il/wp-content/uploads/BLUE-BG.jpg) repeat left !important;}
+.page-id-77111#top .av-subnav-menu > li > a:hover, .page-id-77111#top  .av-subnav-menu li.current_page_item a, .page-id-77111#top .av-subnav-menu li.current-menu-parent  a {color:#0e1577!important; background:transparent !important;}
+.page-id-77111#top .av-subnav-menu > li > a{padding:7px 20px; display: block; border-left-style:solid; border-left-width:1px; border-left-color: #b0b0b0; font-size:20px; color:#636363; margin-left:2px; background: transparent;}
+#top .av-subnav-menu > li#menu-item-77383 > a {border-left-width:0px !important;}
+
+
+@media only screen and (max-width: 767px)
+{
+	.responsive .page-id-77111#top .av-subnav-menu > li > a{padding:7px 10px; font-size:14px; margin-left:0px;}
+	.responsive .page-id-77111#top .av-subnav-menu .sub-menu > li > a {padding: 5px 7px; font-size:14px;}
+}
+
+#top .av-subnav-menu > li#menu-item-77384 > a{padding:4px 20px; font-weight: bold; color:#0e1577; background: transparent; border:3px solid #0e1577;}
+#top .av-subnav-menu > li#menu-item-77384 > a:hover {color:#0e1577 !important; background: #f0f0f0 !important; border:3px solid #0e1577;}
+
+.page-id-77111#top .main_color .tabcontainer .tab.active_tab {
+    color: #0e1577;
+	}
+	
+.page-id-77111#top .main_color .tabcontainer .tab {
+    color: #0e1577;
+	}
+
+.page-id-77111#top .main_color .tabcontainer .tab:hover {
+    color: #0e1577 !important;
+	font-weight:bold !important;
+	}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-77111#top .main_color .tabcontainer .active_tab {
+    color: #ffffff !important;
+}
+}
+
+@media only screen and (max-width: 767px){
+.responsive .page-id-77111#top .av-subnav-menu > li > a {
+    margin-bottom: 2px !important;
+}
+}
+
+.page-id-77111 div .main_color .tabcontainer .active_tab_content, .page-id-77111 div .main_color .tabcontainer .active_tab {
+    background-color: #e5e5e5;
+}
+
+.main_color .avia-content-slider .slide-image {
+background: transparent;
+}
+
+.page-id-77111 .main_color blockquote {
+    border-color: #0e1577 !important;
+}
+
+/*------------END OF GIS 2023 CONF---------------------*/
+
+
+
+/*----------- Contact form 7 fixes --------------------*/
+
+.wpcf7 input[type="email"]
+{
+    direction: rtl;
+}
+/*----------------------------*/
+
+/* ===========================================================
+             Colaje
+============================================================== */
+
+div#colaje .avia-image-container {
+	margin: 0;
+}
+
+div#colaje .flex_cell_inner {
+margin: 0 auto -2px auto;
+}
+
+div#colaje .avia_image {
+    border-radius: 0px !important;
+}
+
+div#colaje .av-image-caption-overlay p {
+	text-align: right;
+	color: #ffffff;	
+	font-size: 18px;
+	line-height: 130%;
+	margin: 12px 0;
+}
+	
+div#colaje h3 {
+	font-size: 22px !important; 
+	text-align: right;
+	color: #ffffff;
+}
+
+
+	@media screen and (max-width: 1500px) and (min-width: 768px) {
+		div#colaje .av-image-caption-overlay p {
+		font-size: 16px;
+		line-height: 100%;
+		margin: 5px 0;
+		}
+		
+		div#colaje h3 {
+		font-size: 18px !important; 
+		}
+	}
+	
+	
+div#colaje .av-image-caption-overlay-center {
+	padding: 0px 40px; 
+}
+
+div#colaje .av-image-caption-overlay a {
+	text-decoration: none;
+}
+
+div#colaje .avia-image-container.img_adj .av-image-caption-overlay {
+    height: 99.2%;
+}
+
+	@media only screen and (max-width: 767px){	
+		div .title_overlay_adj {
+			bottom: 0px;
+		}
+		
+		div#colaje .avia-image-container.img_adj .av-image-caption-overlay {
+			height: 100%;
+		}
+	}
+
+
+
+
+/* ----------- Title Overlay ----------- */
+
+div .title_overlay {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    z-index: 1 ;
+}
+
+div .title_overlay_adj {
+    position: relative;
+    right: 0;
+    bottom: 2px;
+    z-index: 1 ;
+}
+
+div .title_overlay p,
+div .title_overlay_adj p {
+    background-color: #ffffff;
+    color: #000 !important;
+	font-size: 16px !important;
+    font-weight: 600;
+    opacity: 1;
+    padding: 5px 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    z-index: 1 ;
+	margin: 0;
+}
+
+
+/* =============== End of Colaje ===================== */
+
+/* ===========================================================
+            Masonry
+============================================================== */
+
+#top div.container .av-masonry .av-masonry-sort {
+    padding: 10px 0 30px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#top .av-masonry-load-more {
+    font-size: 18px;
+	background-color: #ccc !important;
+    padding: 5px 20px;
+    display: table !important;
+    margin: 0px auto !important;	
+}
+
+
+/* =============== End of Masonry ============= */
+
+
+
+.main_color div.post-content .avia-button-center a { 
+	text-decoration: none !important;
+}
+
+
+/* ------ easyslider show arrows and hied dots -----*/
+.avia_desktop .av_slideshow.avia-slideshow .avia-slideshow-controls a{
+	opacity: 1;
+	}
+	
+.avia-slideshow-dots a{
+	opacity: 0.4 !important;
+	bottom: 22px;
+	}
+
+.avia-slideshow li:first-child {
+    position: absolute;
+}	
+/*--------------------------------------------------*/
+
+.page-id-38409 .single_toggle {
+  width: 100% !important;
+}
+
+/*
+	webinside 2020
+*/
+.cat-nav-search{
+	width: calc(100% - 16px);
+    margin: auto;
+}
+.only-m.cat-nav-search {
+    margin-bottom: 10px;
+}
+#top .only-m.cat-nav-search input#s{
+	height: 42px;
+}
+#top .cat-nav-search input#s{
+	background: #fff;
+	border: 2px solid #636363;
+	padding: 11px 10px 11px 47px;
+	font-size: 16px;
+	font-weight: 600;
+}
+#top .cat-nav-search #searchsubmit{
+    height: 46px;
+}
+#top .topheader .widget_blogsearch_widget #searchsubmit{
+	color: #707070 !important;
+    font-size: 20px;
+    line-height: 0;
+}
+#top .topheader .widget_blogsearch_widget input#s{
+	font-size: 18px !important;
+	padding: 11px 9px 11px 47px;
+}
+#top .topheader .widget_blogsearch_widget ::-webkit-input-placeholder { /* Chrome */
+  color: #707070;
+}
+#top .topheader .widget_blogsearch_widget  :-ms-input-placeholder { /* IE 10+ */
+  color: #707070;
+}
+#top .topheader .widget_blogsearch_widget  ::-moz-placeholder { /* Firefox 19+ */
+  color: #707070;
+}
+#top .topheader .widget_blogsearch_widget  :-moz-placeholder { /* Firefox 4 - 18 */
+  color: #707070;
+}
+
+/*
+	Single post
+*/
+
+#catlist ul{
+	display: flex;
+	flex-direction: row-reverse;
+	gap: 23px;
+}
+#catlist ul a{
+	color: #bdbdbd;
+	font-size: 15px;
+	font-weight: 400;
+	text-decoration: none !important;
+	padding-bottom: 3px;
+}
+#catlist ul .current-item a{
+	color: #d73733;
+	border-bottom: 2px solid;
+    padding: 0px 10px 3px 10px;
+}
+.flex-row{
+	display: flex;
+	justify-content: space-between;
+	gap: 25px;
+}
+.single-blog-post .topheader .flex-row #breadcrumbs{
+	white-space: nowrap;
+}
+.single-blog-post .topheader .flex-row #catlist::-webkit-scrollbar {
+  display: none;
+}
+.single-blog-post .topheader .flex-row #catlist{
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+.widget_ctapopup_widget{
+	margin-top: 8px;
+}
+.popup-cta{
+	height: 37px;
+	border: 1px solid #d73733;
+	background-color: #d73733;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff !important;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none !important;
+}
+.popup-open {
+  overflow: hidden;
+}
+.popup-open #header{
+	z-index: 1;
+}
+.popup-open #footer{
+	z-index: 0;
+}
+.popup-open body {
+  overflow: hidden;
+}
+.popup-open .popup-content {
+  transform: translateY(0);
+}
+.popup[data-popup] {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 37 75 / 0.5);
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 4;
+}
+.popup-wrap {
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.popup-content {
+  width: 360px;
+  padding: 30px 50px;
+  margin: 50px 0;
+  background: #fff;
+  position: relative;
+  border-radius: 2px;
+  transition: all ease 0.4s;
+  transform: translateY(30px);
+  box-shadow: 0 0 9px rgba(8, 24, 39, 0.1);
+}
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+}
+.popup-title {
+    color: #323232;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 17px;
+}
+.popup-content form p{
+	margin: 0;
+}
+.popup-content form input:not([type="submit"]),
+.popup-content form textarea{
+	margin-bottom: 8px !important;
+}
+.popup-content form input {
+    height: 50px;
+	font-weight: 400;
+	color: #9c9c9c;
+}
+.popup-content form{
+    font-size: 15px !important;
+    margin: 0 !important;
+}
+.popup-content form [type="submit"]{
+	height: 60px;
+	background-color: #d73733;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 700;
+	width: 100%;
+}
+.popup-content div.wpcf7-response-output{
+	margin: 0 !important;
+}
+.popup-content .ajax-loader{
+	position: absolute;
+}
+
+.mobile-post-nav{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 3;
+}
+.mobile-post-nav ul{
+	background-color: #fff;
+	height: 50px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 0;
+	grid-gap: 1px;
+}
+.mobile-post-nav ul li{
+	background-color: #d73733;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mobile-post-nav a{
+	color: #fff;
+	font-size: 14px;
+	font-weight: 300;
+	display: block;
+	text-align: center;
+	text-decoration: none !important;
+}
+.cta-box div.btn a{
+	text-decoration: none !important;
+}
+.single-blog-post .widget{
+	padding-top: 20px;
+}
+.single-blog-post .post_tags a{
+	text-decoration: underline !important;
+}
+aside span.wpcf7-form-control-wrap[class*="mailpoetsignup"] {
+    display: none;
+}
+.newsletter-form{
+    display: grid;
+    grid-template-columns: 1fr 88px;
+}
+.newsletter-form .wpcf7-not-valid-tip{
+	position: absolute;
+    width: calc(100% + 88px);
+    font-size: 15px;
+}
+.newsletter-form .ajax-loader{
+	position: absolute;
+	top:100%;
+}
+.widget_newsletter_wrapper .wpcf7-validation-errors{
+	display: none !important;
+}
+
+.mailpoet_recaptcha_container{
+    margin-top: 20px;
+}
+.mailpoet_recaptcha_container > div{
+	height: 79px !important;
+}
+.mailpoet_recaptcha_container > div,
+.mailpoet_recaptcha_container iframe {
+    width: 100% !important;
+}
+@media (max-width: 993px){
+	.single-blog-post .topheader .flex-row #catlist{
+		overflow-x: scroll;
+		width: 100%;
+		direction: ltr;
+	}
+	.single-blog-post .topheader .flex-row #catlist ul{
+		white-space: nowrap;
+		display: block;
+	}
+	.single-blog-post .topheader .flex-row #catlist ul li{
+		display: inline-block;
+		
+	}
+	.single-blog-post .topheader .flex-row #catlist ul li{
+		margin-left: 13px;
+	}
+	.single-blog-post .topheader .flex-row #catlist ul li:first-child{
+		margin-left: 20px;
+	}
+	.single-blog-post .topheader .flex-row #catlist ul li:last-child{
+		margin-right: 20px;
+	}
+	.single-blog-post.responsive #top .topheader .container{
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+	.single-blog-post .topheader .flex-row #breadcrumbs{
+		width: 85%;
+		max-width: 85%;
+		margin: auto;
+	}
+}
+@media (max-width: 767px){
+	#top #wrap_all .all_colors h1.single-title{
+	    font-size: 34px;
+	    line-height: 1.2;
+	}
+	.single-blog-post .topheader .flex-row .cat_nav_wrapper{
+		position: absolute;
+		bottom: -60px;
+		z-index: 3;
+		width: 100%;
+	    padding: 0;
+	}
+	.single-blog-post .topheader .flex-row .cat_nav_wrapper:before{
+		content: " ";
+		position: absolute;
+		left: -32px;
+		right: -32px;
+		height: 1px;
+		background: #bdbdbd;
+	    top: 27px;
+	    z-index: -1;
+	}
+	.hide-m{
+		display: none;
+	}
+	.single-blog-post .topheader .flex-row{
+		flex-direction: column;
+	}
+	.popup-open.single-blog-post .topheader .flex-row .cat_nav_wrapper,
+	.popup-open .uac-icons-set,
+	.popup-open .mobile-post-nav{
+		z-index: -1 !important;
+	}
+	.single-blog-post .av-content-small{
+		padding-top: 70px;
+	}
+	.single-blog-post #breadcrumbs{
+		margin-bottom: 10px;
+	}
+	.single-blog-post #top #wrap_all .all_colors h1.single-title{
+	    padding-bottom: 0.3em;
+	    margin-bottom: 0.45em;
+	}
+}
+@media (min-width: 768px){
+	.only-m{
+		display: none;
+	}
+	/*
+		Sticky sidebar for blog
+	*/
+	html.single-blog-post.responsive, .single-blog-post.responsive body,
+	.single-blog-post #top #main .sidebar,
+	.single-blog-post #wrap_all{
+		overflow: visible;
+	}
+	.single-blog-post #top #main .sidebar{
+		width: 30%;
+	}
+	.single-blog-post .container.template-single-blog{
+		display: flex;
+	}
+	.single-blog-post .container.template-single-blog .av-content-small.units{
+		width: 70%;
+	}
+	.single-blog-post .container.template-single-blog .sidebar_left .inner_sidebar{
+		position: sticky;
+		top: 100px;
+	}
+}
+
+/*============ Horizontal cf7 ==============*/
+
+#colored_submit td,
+#colored_submit_black td,
+#colored_form td {
+	vertical-align: top !important; /*Firefox fix*/
+}
+
+
+/*----- change submit button color ------*/
+#colored_submit.main_color input[type='submit'] {
+background-color: #d73733;
+border-color: #d73733;
+}
+
+
+/*----- change submit button color BLACK------*/
+#colored_submit_black.main_color input[type='submit'] {
+background-color: #000000;
+border-color: #000000;
+}
+
+
+/*----- change submit button color BLUE------*/
+#colored_form.main_color input[type='submit'] {
+background-color: #0762c7;
+border-color: #0762c7;
+}
+
+/*==============================================*/
+
+.wp-block-image a{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+/*=============================
+       Magazine Element 
+ ============================*/
+ 
+ /*------ Magazine Heading - Sort block ------*/
+
+#top .av-magazine-top-bar {
+    background: #ebebeb;
+    padding: 20px;
+}
+
+.av-magazine-sort {
+	font-size: 20px;
+	font-weight: bold;
+	float: right !important;
+}
+
+#sw_courses.av-magazine .avia-inherit-font-color a.active_sort, #sw_courses.av-magazine .avia-inherit-font-color a:hover {
+    color: #d73733 !important;
+}
+
+#gis_courses.av-magazine .avia-inherit-font-color a.active_sort, #gis_courses.av-magazine .avia-inherit-font-color a:hover { 
+    color: #558d61 !important;
+}
+
+#ml_courses.av-magazine .avia-inherit-font-color a.active_sort, #ml_courses.av-magazine .avia-inherit-font-color a:hover { 
+    color: #5381a0 !important;
+}
+
+#dp_courses.av-magazine .avia-inherit-font-color a.active_sort, #dp_courses.av-magazine .avia-inherit-font-color a:hover { 
+    color: #636363 !important;
+}
+
+/*----- Hide magazine time -----*/
+
+time.av-magazine-time {
+    display: none;
+}
+
+/*----- Magazine title ------*/
+
+#top .av-magazine .av-magazine-title {    
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+#top .av-magazine .av-magazine-title {    
+    margin-top: 0px;
+}
+}
+
+#sw_courses.av-magazine .av-magazine-title a:hover {    /* SLOIDWORKS */
+    color: #d73733;
+}
+
+#gis_courses.av-magazine .av-magazine-title a:hover {   /* GIS */
+    color: #558d61;
+}
+
+#ml_courses.av-magazine .av-magazine-title a:hover {    /* MATLAB */
+    color: #5381a0;
+}
+
+#dp_courses.av-magazine .av-magazine-title a:hover {    /* 3D PRINTING */
+    color: #898a8e;
+}
+
+/*===== Contact Form 7 - fixes ====*/
+
+/* Contact Form 7 placeholder color */
+.wpcf7 input::placeholder,
+.wpcf7 textarea::placeholder {
+	color: #636363 !important;
+	opacity: 1 !important; 
+}
+
+/* Error message color */
+.wpcf7-not-valid-tip {
+    color: #dc3232 !important;
+}
+
+/*===== New fields navigation bar ====*/
+
+#fields-nav .container {
+    max-width: 1500px !important;
+    width: 100% !important;
+}
+
+/*===== Custom Tab section - SW ====*/
+
+#top .sw_tabs .av-tab-section-tab-title-container {
+    background-color: #efefef; 
+}
+
+#top .sw_tabs .av-section-tab-title .av-inner-tab-title {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: #636363 !important;
+	text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+#top .sw_tabs a.av-active-tab-title .av-inner-tab-title,
+#top .sw_tabs .av-section-tab-title:hover .av-inner-tab-title {
+    color: #D73733 !important
+}
+
+#top .sw_tabs .av-section-tab-title .av-inner-tab-title {
+    font-size: 20px !important;
+    font-weight: bold;
+    color: #636363 !important;
+	text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+#top .sw_tabs .av-tab-section-image {
+    border: 10px solid #ffffff !important;
+    border-radius: 8px !important;
+    box-sizing: border-box;
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: cover !important;
+}
+
+#top .sw_tabs .av-section-tab-title .av-tab-arrow-container {
+    width: 100% !important;
+    left: 0 !important;
+    margin: 0 !important;
+}
+
+#top .sw_tabs .avia_transform .av-tab-arrow-container span {
+    left: 50% !important;
+    transform: translateX(-50%) rotate(45deg) !important;
+}
+
+#top .sw_tabs .av-tab-section-tab-title-container {
+    padding: 30px 0 0 0;
+}
+
+/*===== Custom Bulleted List - v ====*/
+
+#top .v-check-list ul {
+    list-style-type: none !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+}
+
+#top .v-check-list ul li {
+    position: relative !important;
+    padding-right: 28px !important;
+}
+
+#top .v-check-list ul li p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#top .v-check-list ul li::before {
+    content: '' !important;
+    position: absolute !important;
+    right: 5px !important;
+    top: 2px !important;
+    width: 6px !important;
+    height: 13px !important;
+    border: solid #83a846 !important;
+    border-width: 0 3px 3px 0 !important;
+    transform: rotate(45deg) !important;
+}
+
+#top .v-check-list ul li:first-child::before {
+    top: 6px !important; 
+}
+
+
+/*===== Countdown Counter TIMER =====*/
+
+.av-countdown-timer.custom-blue-countdown {
+    background: transparent !important; 
+    border: none !important; 
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* Arrange countdown units - gap etc */
+.av-countdown-timer.custom-blue-countdown > * {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Cell styling - fixed width */
+.av-countdown-timer.custom-blue-countdown .av-countdown-cell {
+    background: transparent !important; 
+    border: none !important; 
+    padding: 0 !important;
+    width: 105px !important;
+    box-sizing: border-box !important;
+}
+
+.av-countdown-timer.custom-blue-countdown .av-countdown-cell-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+    overflow: hidden !important; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+}
+
+/* Numbers */
+.av-countdown-timer.custom-blue-countdown .av-countdown-time {
+    background-color: #3f5170 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 22px 0 !important;
+    font-size: 46px !important;
+    font-weight: bold !important;
+    line-height: 1 !important;
+}
+
+/* Labels */
+.av-countdown-timer.custom-blue-countdown .av-countdown-time-label {
+    background-color: #273650 !important;
+    color: #ffffff !important;
+    text-align: center !important;
+    padding: 14px 0 !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    letter-spacing: 1px !important;
+    border: none !important;
+}
+
+/* Mobile adjustments */
+@media only screen and (max-width: 767px) {
+    .av-countdown-timer.custom-blue-countdown > * {
+        gap: 6px !important;
+    }
+    
+    .av-countdown-timer.custom-blue-countdown .av-countdown-cell {
+        width: 80px !important;
+    }
+
+    .av-countdown-timer.custom-blue-countdown .av-countdown-time {
+        font-size: 32px !important; 
+        padding: 18px 0 !important;
+    }
+    
+    .av-countdown-timer.custom-blue-countdown .av-countdown-time-label {
+        font-size: 14px !important;
+        padding: 10px 0 !important;
+    }
+}
+
+/*==============================================*/
