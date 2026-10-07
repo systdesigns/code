@@ -10,7 +10,7 @@
   var VB_W = 764.53;
   var VB_H = 587.74;
   /** Uniform radius in viewBox units (SVG median ≈ 0.96). */
-  var UNIFORM_R = 0.96;
+  var UNIFORM_R = 1.55;
   /** Drift amplitude in viewBox units — stronger visible letter oscillation. */
   var AMP_MIN = 2.5;
   var AMP_MAX = 5;
@@ -163,8 +163,8 @@
 
   HeroParticles.prototype.resize = function () {
     var rect = this.stage.getBoundingClientRect();
-    var w = Math.max(1, Math.floor(rect.width));
-    var h = Math.max(1, Math.floor(rect.height));
+    var w = Math.max(2, Math.floor(rect.width) || this.stage.clientWidth || 320);
+    var h = Math.max(2, Math.floor(rect.height) || this.stage.clientHeight || 246);
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     this.w = w;
     this.h = h;
@@ -196,10 +196,11 @@
     var oy = this.oy;
     var r = UNIFORM_R * s;
     ctx.clearRect(0, 0, this.w, this.h);
+    ctx.globalAlpha = 1;
     ctx.fillStyle = '#ffffff';
     for (var i = 0; i < n; i++) {
       ctx.beginPath();
-      ctx.arc(ox + bx[i] * s, oy + by[i] * s, r, 0, Math.PI * 2);
+      ctx.arc(ox + bx[i] * s, oy + by[i] * s, Math.max(1.15, r), 0, Math.PI * 2);
       ctx.fill();
     }
   };
@@ -238,13 +239,14 @@
     var r = UNIFORM_R * scale;
 
     ctx.clearRect(0, 0, this.w, this.h);
+    ctx.globalAlpha = 1;
     ctx.fillStyle = '#ffffff';
 
     for (var i = 0; i < n; i++) {
       var dx = Math.sin(t * sx[i] + px[i]) * ax[i];
       var dy = Math.cos(t * sy[i] + py[i]) * ay[i];
       ctx.beginPath();
-      ctx.arc(ox + (bx[i] + dx) * scale, oy + (by[i] + dy) * scale, r, 0, Math.PI * 2);
+      ctx.arc(ox + (bx[i] + dx) * scale, oy + (by[i] + dy) * scale, Math.max(1.15, r), 0, Math.PI * 2);
       ctx.fill();
     }
   };

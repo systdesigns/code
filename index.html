@@ -306,6 +306,7 @@ PLAu:32
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
+  isolation: isolate;
 }
 #av_section_1.sys-hero-yt-fixed .sys-hero-yt-bg iframe {
   position: absolute;
@@ -318,10 +319,12 @@ PLAu:32
   transform: translate(-50%, -50%);
   border: 0;
   pointer-events: none;
+  z-index: 0;
 }
 #av_section_1.sys-hero-yt-fixed .av-section-color-overlay-wrap {
   position: relative;
-  z-index: 2;
+  z-index: 5;
+  isolation: isolate;
 }
 #av_section_1.sys-hero-yt-fixed .av-section-color-overlay {
   background: transparent !important;
@@ -338,30 +341,49 @@ PLAu:32
 </style>
 
 <style id="sys-hero-particles-fix">
-/* Particle overlay on center hero video — additive only */
+/* Particle overlay on center hero video — visibility over YouTube */
 #av_section_1.sys-hero-yt-fixed[data-sys-hero-particles] {
   /* keep existing yt styles */
 }
 #av_section_1 .sys-hero-stage {
   position: relative;
-  width: min(42vw, 768px);
-  max-width: 768px;
+  width: min(52vw, 900px);
+  max-width: 900px;
+  min-width: 280px;
+  min-height: 220px;
   height: auto;
   aspect-ratio: 764.53 / 587.74;
   margin: 0 auto;
   opacity: 0;
   transition: opacity 1.25s ease;
-  z-index: 3;
+  z-index: 6;
+  isolation: isolate;
 }
 #av_section_1 .sys-hero-stage.is-ready { opacity: 1; }
+/* Dark scrim behind dots only (not full-bleed video) for contrast on bright frames */
+#av_section_1 .sys-hero-stage::before {
+  content: "";
+  position: absolute;
+  inset: -8% -6%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 72% 68% at 50% 48%,
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.32) 48%,
+    rgba(0, 0, 0, 0.08) 68%,
+    rgba(0, 0, 0, 0) 78%
+  );
+}
 #av_section_1 .sys-hero-stage [data-hero-static] {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   display: block;
+  opacity: 1;
 }
 #av_section_1 .sys-hero-stage [data-hero-logo] {
   position: absolute;
@@ -379,28 +401,38 @@ PLAu:32
 #av_section_1 .sys-hero-stage canvas[data-hero-particles] {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 3;
+  opacity: 1;
   pointer-events: none;
 }
 /* Keep conference link clickable; canvas/static are pointer-events:none */
 #av_section_1 .sys-hero-particles-link {
   display: block;
   position: relative;
-  z-index: 3;
+  z-index: 6;
   text-decoration: none;
   pointer-events: auto;
 }
-#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host,
-#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host img {
-  /* override prior img z-index rules; stage handles stacking */
+#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host {
   position: relative;
-  z-index: 3;
+  z-index: 6;
+}
+/* Do not let generic img z-index:3 put static SVG above canvas */
+#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host img[data-hero-static] {
+  position: absolute !important;
+  z-index: 2 !important;
+}
+#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host img[data-hero-logo] {
+  position: absolute !important;
+  z-index: 0 !important;
 }
 @media (max-width: 767px) {
   #av_section_1 .sys-hero-stage {
-    width: min(88vw, 520px);
+    width: min(92vw, 560px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
