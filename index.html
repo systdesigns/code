@@ -336,6 +336,78 @@ PLAu:32
   z-index: 4;
 }
 </style>
+
+<style id="sys-hero-particles-fix">
+/* Particle overlay on center hero video — additive only */
+#av_section_1.sys-hero-yt-fixed[data-sys-hero-particles] {
+  /* keep existing yt styles */
+}
+#av_section_1 .sys-hero-stage {
+  position: relative;
+  width: min(42vw, 768px);
+  max-width: 768px;
+  height: auto;
+  aspect-ratio: 764.53 / 587.74;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 1.25s ease;
+  z-index: 3;
+}
+#av_section_1 .sys-hero-stage.is-ready { opacity: 1; }
+#av_section_1 .sys-hero-stage [data-hero-static] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+}
+#av_section_1 .sys-hero-stage [data-hero-logo] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+#av_section_1 .sys-hero-stage canvas[data-hero-particles] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+/* Keep conference link clickable; canvas/static are pointer-events:none */
+#av_section_1 .sys-hero-particles-link {
+  display: block;
+  position: relative;
+  z-index: 3;
+  text-decoration: none;
+  pointer-events: auto;
+}
+#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host,
+#av_section_1.sys-hero-yt-fixed .avia-image-container.sys-hero-particles-host img {
+  /* override prior img z-index rules; stage handles stacking */
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 767px) {
+  #av_section_1 .sys-hero-stage {
+    width: min(88vw, 520px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #av_section_1 .sys-hero-stage { opacity: 1; transition: none; }
+}
+</style>
+
 </head>
 
 
@@ -807,13 +879,17 @@ line-height:16px;
 		
 	<div id='main' class='all_colors' data-scroll-offset='88'>
 
-	<div id='av_section_1'  class='sys-hero-yt-fixed avia-section av-p1gph1-8f1019d85ffbd9fcf4122473b2bb1f5a main_color avia-section-no-padding avia-no-border-styling  avia-builder-el-0  el_before_av_section  avia-builder-el-first  hideonmobile avia-bg-style-scroll av-section-color-overlay-active av-minimum-height av-minimum-height-custom av-height-custom  av-section-with-video-bg container_wrap fullsize'   data-av_minimum_height_px='550' data-section-video-ratio='16:9'><div class="sys-hero-yt-bg" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/_4VqkuOIR7Y?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=_4VqkuOIR7Y&amp;controls=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1" title="Systematics hero background" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="eager"></iframe></div><div class="av-section-color-overlay-wrap"><div class="av-section-color-overlay"></div><a href='#next-section' title='' class='scroll-down-link av-custom-scroll-down-color avia-svg-icon avia-font-svg_entypo-fontello' data-av_svg_icon='down-open-mini' data-av_iconset='svg_entypo-fontello'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="32" viewBox="0 0 15 32" preserveAspectRatio="xMidYMid meet" aria-labelledby='av-svg-title-1' aria-describedby='av-svg-desc-1' role="graphics-symbol" aria-hidden="true">
+	<div id='av_section_1' data-sys-hero-particles class='sys-hero-yt-fixed sys-hero-particles avia-section av-p1gph1-8f1019d85ffbd9fcf4122473b2bb1f5a main_color avia-section-no-padding avia-no-border-styling  avia-builder-el-0  el_before_av_section  avia-builder-el-first  hideonmobile avia-bg-style-scroll av-section-color-overlay-active av-minimum-height av-minimum-height-custom av-height-custom  av-section-with-video-bg container_wrap fullsize'   data-av_minimum_height_px='550' data-section-video-ratio='16:9'><div class="sys-hero-yt-bg" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/_4VqkuOIR7Y?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=_4VqkuOIR7Y&amp;controls=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=1&amp;iv_load_policy=3&amp;fs=0&amp;disablekb=1" title="Systematics hero background" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="eager"></iframe></div><div class="av-section-color-overlay-wrap"><div class="av-section-color-overlay"></div><a href='#next-section' title='' class='scroll-down-link av-custom-scroll-down-color avia-svg-icon avia-font-svg_entypo-fontello' data-av_svg_icon='down-open-mini' data-av_iconset='svg_entypo-fontello'><svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="15" height="32" viewBox="0 0 15 32" preserveAspectRatio="xMidYMid meet" aria-labelledby='av-svg-title-1' aria-describedby='av-svg-desc-1' role="graphics-symbol" aria-hidden="true">
 <title id='av-svg-title-1'>Scroll to next section</title>
 <desc id='av-svg-desc-1'>Scroll to next section</desc>
 <path d="M12.96 12.16q0.704-0.832 1.536 0 0.832 0.704 0 1.536l-6.272 6.144q-0.704 0.704-1.536 0l-6.272-6.144q-0.832-0.832 0-1.536 0.768-0.768 1.6 0l5.44 4.992z"></path>
 </svg></a><div class='container av-section-cont-open' style='height:550px'><main  role="main" itemprop="mainContentOfPage"  class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-3525'><div class='entry-content-wrapper clearfix'>
 <div  class='hr av-2g0ssl-a3354b46f1b8967c1699e25cfdd32e4f hr-invisible  avia-builder-el-1  el_before_av_one_full  avia-builder-el-first  hideonmobile'><span class='hr-inner '><span class="hr-inner-style"></span></span></div>
-<div  class='flex_column av-mvdphh-01d56e16e17d21f81b494d3d8224bb28 av_one_full  avia-builder-el-2  el_after_av_hr  avia-builder-el-last  first flex_column_div  '     ><div  class='avia-image-container av-kjut11-861a42d60395adfbf36868953e5abb4a av-styling- av-img-linked avia-align-center  avia-builder-el-3  avia-builder-el-no-sibling '   itemprop="image" itemscope="itemscope" itemtype="https://schema.org/ImageObject" ><div class="avia-image-container-inner"><div class="avia-image-overlay-wrap"><a href="https://www.systematics.co.il/events/systematics-next-2026-conf/" class='avia_image '  target="_blank"  rel="noopener noreferrer" aria-label='Systematics NEXT 2026'><img decoding="async" fetchpriority="high" class='wp-image-105401 avia-img-lazy-loading-not-105401 avia_image ' src="empowering-the-next.png" alt='' title='Systematics NEXT 2026'  height="1081" width="1921"  itemprop="thumbnailUrl" srcset="empowering-the-next.png 1921w, empowering-the-next.png 300w, empowering-the-next.png 1030w, empowering-the-next.png 768w, empowering-the-next.png 1536w, empowering-the-next.png 1500w, empowering-the-next.png 705w, empowering-the-next.png 1320w" sizes="(max-width: 1921px) 100vw, 1921px" /></a></div></div></div></div></div></div></main><!-- close content main element --></div></div></div><div id='av_section_2'  class='avia-section av-ojo279-3d9730a051845858a7fee5bd436f52ef main_color avia-section-no-padding avia-no-border-styling  avia-builder-el-4  el_after_av_section  el_before_av_section  hideondesktop avia-full-stretch avia-bg-style-scroll av-section-color-overlay-active container_wrap fullsize'  data-section-bg-repeat='stretch'><div class="av-section-color-overlay-wrap"><div class="av-section-color-overlay"></div><div class='container av-section-cont-open' ><div class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-3525'><div class='entry-content-wrapper clearfix'>
+<div  class='flex_column av-mvdphh-01d56e16e17d21f81b494d3d8224bb28 av_one_full  avia-builder-el-2  el_after_av_hr  avia-builder-el-last  first flex_column_div  '     ><div  class='avia-image-container sys-hero-particles-host av-kjut11-861a42d60395adfbf36868953e5abb4a av-styling- av-img-linked avia-align-center  avia-builder-el-3  avia-builder-el-no-sibling '   itemprop="image" itemscope="itemscope" itemtype="https://schema.org/ImageObject" ><div class="avia-image-container-inner"><div class="avia-image-overlay-wrap"><a href="https://www.systematics.co.il/events/systematics-next-2026-conf/" class='avia_image sys-hero-particles-link'  target="_blank"  rel="noopener noreferrer" aria-label='Systematics NEXT 2026 — EMPOWERING THE NEXT'><div class="sys-hero-stage" role="img" aria-label="EMPOWERING THE NEXT">
+<img data-hero-static src="assets/img/empowering-logo-line.svg" alt="" width="765" height="588" decoding="async" aria-hidden="true" />
+<img data-hero-logo src="assets/img/empowering-dot-type.svg" alt="EMPOWERING THE NEXT" width="765" height="588" decoding="async" />
+<canvas data-hero-particles aria-hidden="true"></canvas>
+</div></a></div></div></div></div></div></div></main><!-- close content main element --></div></div></div><div id='av_section_2'  class='avia-section av-ojo279-3d9730a051845858a7fee5bd436f52ef main_color avia-section-no-padding avia-no-border-styling  avia-builder-el-4  el_after_av_section  el_before_av_section  hideondesktop avia-full-stretch avia-bg-style-scroll av-section-color-overlay-active container_wrap fullsize'  data-section-bg-repeat='stretch'><div class="av-section-color-overlay-wrap"><div class="av-section-color-overlay"></div><div class='container av-section-cont-open' ><div class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-3525'><div class='entry-content-wrapper clearfix'>
 <div  class='avia-image-container av-lw1ug5-39bc5b864f1954505c855ab8b424fa3a av-styling- av-img-linked avia-align-center  avia-builder-el-5  avia-builder-el-no-sibling '   itemprop="image" itemscope="itemscope" itemtype="https://schema.org/ImageObject" ><div class="avia-image-container-inner"><div class="avia-image-overlay-wrap"><a href="https://www.systematics.co.il/events/systematics-next-2026-std/" class='avia_image '  target="_blank"  rel="noopener noreferrer" aria-label='Systematics NEXT 2026'><img decoding="async" fetchpriority="high" class='wp-image-105397 avia-img-lazy-loading-not-105397 avia_image ' src="https://www.systematics.co.il/wp-content/uploads/Systematics_LinkedIn_628X1200.png" alt='' title='Systematics NEXT 2026'  height="629" width="1201"  itemprop="thumbnailUrl" srcset="https://www.systematics.co.il/wp-content/uploads/Systematics_LinkedIn_628X1200.png 1201w, https://www.systematics.co.il/wp-content/uploads/Systematics_LinkedIn_628X1200-300x157.png 300w, https://www.systematics.co.il/wp-content/uploads/Systematics_LinkedIn_628X1200-1030x539.png 1030w, https://www.systematics.co.il/wp-content/uploads/Systematics_LinkedIn_628X1200-768x402.png 768w, https://www.systematics.co.il/wp-content/uploads/Systematics_LinkedIn_628X1200-705x369.png 705w" sizes="(max-width: 1201px) 100vw, 1201px" /></a></div></div></div>
 </p>
 </div></div></div><!-- close content main div --></div></div></div><div id='fields-nav'  class='avia-section av-254zut-13bd23618ad424799834a543759bc6d8 alternate_color avia-section-no-padding avia-no-border-styling  avia-builder-el-6  el_after_av_section  el_before_av_section  avia-bg-style-scroll container_wrap fullsize'  data-section-bg-repeat='repeat'><div class='container av-section-cont-open' ><div class='template-page content  av-content-full alpha units'><div class='post-entry post-entry-type-page post-entry-3525'><div class='entry-content-wrapper clearfix'>
@@ -846,5 +922,6 @@ line-height:16px;
 		</div>
 		
 		<!-- end wrap_all --></div>
+<script src="assets/js/hero-particles.js" defer></script>
 </body>
 </html>
